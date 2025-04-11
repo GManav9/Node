@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookstore Form</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background: #f8f9fa;
+      }
+
+      .form-container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 30px;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .btn-primary {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <div class="form-title text-center">Add New Book</div>
+        <form action="/AddData" method="post">
+          <div class="mb-3">
+            <label for="title" class="form-label">Book Image</label>
+            <input
+              type="text"
+              class="form-control"
+              id="title"
+              placeholder="Enter book Image"
+              name="bookimage"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="title" class="form-label">Book Title</label>
+            <input
+              type="text"
+              class="form-control"
+              id="title"
+              placeholder="Enter book title"
+              name="booktitle"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="author" class="form-label">Author</label>
+            <input
+              type="text"
+              class="form-control"
+              id="author"
+              placeholder="Enter author's name"
+              name="bookauthor"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="genre" class="form-label">Genre</label>
+            <select class="form-select" name="bookgenre" id="genre">
+              <option selected disabled>Choose genre</option>
+              <option>Fiction</option>
+              <option>Non-Fiction</option>
+              <option>Science</option>
+              <option>Biography</option>
+              <option>Fantasy</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="price" class="form-label">Price ($)</label>
+            <input
+              type="number"
+              class="form-control"
+              id="price"
+              placeholder="Enter price"
+              name="bookprice"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea
+              class="form-control"
+              id="description"
+              rows="3"
+              placeholder="Short description of the book"
+              name="bookdescription"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Add Book</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
