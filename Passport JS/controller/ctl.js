@@ -3,35 +3,27 @@ const Schema = require("../model/Schema");
 module.exports.login = (req, res) => {
   res.render("login");
 };
-
-module.exports.loginAdmin = async (req, res) => {
-  let admin = await Schema.findOne({ email: req.body.email });
-  if (admin) {
-    if (req.body.password == admin.password) {
-      res.cookie("admin", admin);
-      res.redirect("dashboard");
-    } else {
-      res.redirect("/");
+module.exports.logout = (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      console.log("Error destroying session:", err);
+      return res.redirect("/dashboard");
     }
-  } else {
-    res.redirect("/");
-  }
+    res.redirect("/"); // or redirect to login page
+  });
+};
+
+  
+module.exports.loginAdmin = async (req, res) => {
+  res.redirect("/dashboard");
 };
 
 module.exports.dashboard = (req, res) => {
-  if (req.cookies.admin) {
-    res.render("dashboard");
-  } else {
-    res.redirect("/");
-  }
+  res.render("dashboard");
 };
 
 module.exports.addAdmin = (req, res) => {
-  if (req.cookies.admin) {
-    res.render("addAdmin");
-  } else {
-    res.redirect("/");
-  }
+  res.render("addAdmin");
 };
 
 module.exports.addAdminData = async (req, res) => {
@@ -68,7 +60,6 @@ module.exports.updateAdmin = async (req, res) => {
   });
 };
 
-module.exports.logout = (req, res) => {
-  res.clearCookie("admin");
-  res.redirect("/");
+module.exports.profile = (req, res) => {
+  res.render("profile");
 };

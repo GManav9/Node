@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SeoDash Free Bootstrap Admin Template by Adminmart</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="images/logos/seodashlogo.png"
+    />
+    <link
+      rel="stylesheet"
+      href="../../node_modules/simplebar/dist/simplebar.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.min.css" />
+  </head>
+
+  <body>
+    <!--  Body Wrapper -->
+    <div
+      class="page-wrapper"
+      id="main-wrapper"
+      data-layout="vertical"
+      data-navbarbg="skin6"
+      data-sidebartype="full"
+      data-sidebar-position="fixed"
+      data-header-position="fixed"
+    >
+      <!-- Sidebar Start -->
+      <%-include ("aside") %>
+      <!--  Sidebar End -->
+      <!--  Main wrapper -->
+      <div class="body-wrapper">
+        <!--  Header Start -->
+
+        <%-include ("header") %>
+
+        <!--  Header End -->
+        <div class="container-fluid">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title fw-semibold mb-4">Add Admin</h5>
+              <div class="card">
+                <div class="card-body">
+                  <form method="post" action="/updateAdmin">
+                    <div class="mb-3">
+                      <input type="hidden" name="id" value="<%= data._id %>" />
+                      <label for="exampleInputEmail1" class="form-label"
+                        >First Name</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="exampleInputEmail1"
+                        name="fname"
+                        value="<%=data.fname%>"
+                        aria-describedby="emailHelp"
+                        required
+                      />
+                      <div id="emailHelp" class="form-text">
+                        We'll never share your First Name with anyone else.
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label"
+                        >Last Name</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="exampleInputEmail1"
+                        name="lname"
+                        value="<%=data.lname%>"
+                        aria-describedby="emailHelp"
+                        required
+                      />
+                      <div id="emailHelp" class="form-text">
+                        We'll never share your Last Name with anyone else.
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label"
+                        >Email address</label
+                      >
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="exampleInputEmail1"
+                        name="email"
+                        value="<%=data.email%>"
+                        aria-describedby="emailHelp"
+                        required
+                      />
+                      <div id="emailHelp" class="form-text">
+                        We'll never share your email with anyone else.
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label"
+                        >Password</label
+                      >
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="exampleInputPassword1"
+                        name="password"
+                        value="<%=data.password%>"
+                        required
+                      />
+                    </div>
+                    <!-- <div class="mb-3 form-check">
+                      <input
+                        type="checkbox"
+                        class="form-check-input"
+                        id="exampleCheck1"
+                      />
+                      <label class="form-check-label" for="exampleCheck1"
+                        >Check me out</label
+                      >
+                    </div> -->
+                    <button type="submit" class="btn btn-primary">
+                      Update
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+    <script src="libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="libs/simplebar/dist/simplebar.js"></script>
+    <script src="js/sidebarmenu.js"></script>
+    <script src="js/app.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+  </body>
+</html>
