@@ -23,4 +23,11 @@ route.get("/editAdmin", passportSt.checkAuth, ctl.editAdmin);
 
 route.post("/updateAdmin", passportSt.checkAuth, ctl.updateAdmin);
 
+route.get("/changePass", passportSt.checkAuth, ctl.changePass);
+route.post("/changePass", passportSt.checkAuth, ctl.changePassword);
+
+route.get("/ForgetPassword", ctl.ForgetPassword);
+route.post("/ForgetPassword", ctl.lostpassword);
+route.post("/verifypass", ctl.verifypassword);
+
 module.exports = route;

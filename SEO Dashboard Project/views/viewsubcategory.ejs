@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>View Admins - SeoDash</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="/images/logos/seodashlogo.png"
+    />
+    <link
+      rel="stylesheet"
+      href="../../node_modules/simplebar/dist/simplebar.min.css"
+    />
+    <link rel="stylesheet" href="/css/styles.min.css" />
+  </head>
+  <body>
+    <!-- Body Wrapper -->
+    <div
+      class="page-wrapper"
+      id="main-wrapper"
+      data-layout="vertical"
+      data-navbarbg="skin6"
+      data-sidebartype="full"
+      data-sidebar-position="fixed"
+      data-header-position="fixed"
+    >
+      <!-- Sidebar Start -->
+      <%- include("aside") %>
+      <!-- Sidebar End -->
+
+      <!-- Main Wrapper -->
+      <div class="body-wrapper">
+        <!-- Header Start -->
+        <%- include("header") %>
+        <!-- Header End -->
+
+        <div class="container-fluid">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title fw-semibold mb-4">View Category</h5>
+
+              <div class="table-responsive">
+                <table class="table table-bordered table-hover">
+                  <thead class="table-light">
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Category Image</th>
+                      <th scope="col">Category Name</th>
+                      <th scope="col">Sub-Category Name</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% data.map((e,i)=>{ %>
+                    <tr>
+                      <td><%= i+ 1%></td>
+                      <td>
+                        <img
+                          src="/<%=e.categoryId.categoryimage%>"
+                          width="200px"
+                          alt=""
+                        />
+                      </td>
+                      <td><%=e.categoryId.categoryname%></td>
+                      <td><%=e.subcategoryname%></td>
+                      <td><a href="/deleteAdmin?id=<%=e.id%>">Delete</a></td>
+                      <td><a href="/editAdmin?id=<%=e.id%>">Edit</a></td>
+                    </tr>
+                    <% }) %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+    <script src="libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="libs/simplebar/dist/simplebar.js"></script>
+    <script src="js/sidebarmenu.js"></script>
+    <script src="js/app.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+  </body>
+</html>

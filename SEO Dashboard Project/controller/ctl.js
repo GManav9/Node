@@ -1,5 +1,6 @@
 const { Schema } = require("mongoose");
 const schema = require("../model/schema");
+const mailer = require("../middleware/mailer");
 
 module.exports.dashboard = (req, res) => {
   res.render("dashboard");
@@ -56,3 +57,86 @@ module.exports.updateAdmin = async (req, res) => {
     res.redirect("/viewAdmin");
   });
 };
+
+module.exports.changePass = (req, res) => {
+  res.render("changePass");
+};
+
+module.exports.changePassword = async (req, res) => {
+  let admin = req.user;
+
+  if (admin.password == req.body.OldPassword) {
+    if (req.body.OldPassword != req.body.NewPassword) {
+      if (req.body.NewPassword == req.body.ConfirmPassword) {
+        await schema
+          .findByIdAndUpdate(admin.id, { password: req.body.NewPassword })
+          .then(() => {
+            res.redirect("/logout");
+          });
+      } else {
+        res.redirect("/changePass");
+      }
+    } else {
+      res.redirect("/changePass");
+    }
+  } else {
+    res.redirect("/changePass");
+  }
+};
+
+module.exports.ForgetPassword = (req, res) => {
+  res.render("ForgetPassword");
+};
+
+module.exports.lostpassword = async (req, res) => {
+  let admin = await schema.findOne({ email: req.body.email });
+
+  if (!admin) {
+    return res.redirect("/");
+  }
+
+  let otp = Math.floor(Math.random() * 1000 + 9000);
+
+  mailer.sendOTP(req.body.email, otp);
+  req.session.otp = otp;
+  req.session.adminData = admin;
+  res.render("verifypass");
+};
+
+module.exports.verifypassword = async (req, res) => {
+  let otp = req.session.otp;
+  let admin = req.session.adminData;
+
+  if (otp == req.body.otp) {
+    if (req.body.newPass == req.body.confirmPass) {
+      await schema
+        .findByIdAndUpdate(admin._id, { password: req.body.newPass })
+        .then(() => {
+          res.redirect("/");
+        });
+    } else {
+      res.redirect("/");
+    }
+  } else {
+    res.redirect("/");
+  }
+};
+
+// module.exports.verifypassword = async (req, res) => {
+//   let otp = req.session.otp;
+//   let admin = req.session.adminData;
+
+//   if (otp == req.body.otp) {
+//     if (req.body.newPass == req.body.confirmPass) {
+//       await schema
+//         .findByIdAndUpdate(admin._id, { password: req.body.newPass })
+//         .then(() => {
+//           res.redirect("/");
+//         });
+//     } else {
+//       res.redirect("/");
+//     }
+//   } else {
+//     res.redirect("/");
+//   }
+// };

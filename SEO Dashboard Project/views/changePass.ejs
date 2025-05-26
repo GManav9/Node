@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SeoDash Free Bootstrap Admin Template by Adminmart</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="images/logos/seodashlogo.png"
+    />
+    <link
+      rel="stylesheet"
+      href="../../node_modules/simplebar/dist/simplebar.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.min.css" />
+  </head>
+
+  <body>
+    <!--  Body Wrapper -->
+    <div
+      class="page-wrapper"
+      id="main-wrapper"
+      data-layout="vertical"
+      data-navbarbg="skin6"
+      data-sidebartype="full"
+      data-sidebar-position="fixed"
+      data-header-position="fixed"
+    >
+      <!-- Sidebar Start -->
+      <%-include ("aside") %>
+      <!--  Sidebar End -->
+      <!--  Main wrapper -->
+      <div class="body-wrapper">
+        <!--  Header Start -->
+
+        <%-include ("header") %>
+
+        <!--  Header End -->
+        <div class="container-fluid">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title fw-semibold mb-4">Change Password</h5>
+              <div class="card">
+                <div class="card-body">
+                  <% if(locals.flash.success.length > 0){ %>
+                  <h1><%=locals.flash.success%></h1>
+                  <% } %>
+                  <form method="post" action="/changePass">
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label"
+                        >Old Password</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="exampleInputEmail1"
+                        name="OldPassword"
+                        aria-describedby="emailHelp"
+                        required
+                      />
+                      <div id="emailHelp" class="form-text">
+                        We'll never share your First Name with anyone else.
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label"
+                        >New Password</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="exampleInputEmail1"
+                        name="NewPassword"
+                        aria-describedby="emailHelp"
+                        required
+                      />
+                      <div id="emailHelp" class="form-text">
+                        We'll never share your New Password with anyone else.
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label"
+                        >Confirm Password</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="exampleInputEmail1"
+                        name="ConfirmPassword"
+                        aria-describedby="emailHelp"
+                        required
+                      />
+                      <div id="emailHelp" class="form-text">
+                        We'll never share your Confirm Password with anyone
+                        else.
+                      </div>
+                    </div>
+                    <!-- <div class="mb-3 form-check">
+                      <input
+                        type="checkbox"
+                        class="form-check-input"
+                        id="exampleCheck1"
+                      />
+                      <label class="form-check-label" for="exampleCheck1"
+                        >Check me out</label
+                      >
+                    </div> -->
+                    <button type="submit" class="btn btn-primary">
+                      Submit
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+    <script src="libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="libs/simplebar/dist/simplebar.js"></script>
+    <script src="js/sidebarmenu.js"></script>
+    <script src="js/app.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+  </body>
+</html>

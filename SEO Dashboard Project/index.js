@@ -13,6 +13,7 @@ const flash = require("./middleware/flash");
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.use(
   session({
@@ -31,7 +32,13 @@ app.use(connectFlash());
 app.use(flash.setFlash);
 
 app.use("/", require("./routes/route"));
+app.use("/category", require("./routes/category"));
+app.use("/subcategory", require("./routes/subcategory"));
+app.use("/product", require("./routes/product"));
 
 app.listen(port, (err) => {
   err ? console.log(err) : console.log("The Port is Started On  " + port);
 });
+
+
+// google manage google account search Apppassword create new seo and code will be paste in code in vs code npm node mailer 
