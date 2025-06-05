@@ -1,0 +1,121 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Navbar.css";
+import logo from "../src/assets/logo.png"; // Use a light/white version if available
+
+const Navbar = () => {
+  return (
+    <nav className="navbar navbar-expand-lg sticky-top custom-dark-navbar shadow">
+      <div className="container">
+        <Link className="navbar-brand" to="/">
+          <div className="logo-wrapper">
+            <img
+              src={logo}
+              alt="Krossoverr Brand Solutions"
+              className="logo-image"
+            />
+          </div>
+        </Link>
+
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ms-auto me-3 responsive-width d-flex justify-content-evenly">
+            <li className="nav-item">
+              <Link className="nav-link nav-text" to="/">
+                Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link nav-text" to="/services">
+                Services
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link nav-text" to="/services">
+                Work
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link nav-text" to="/about">
+                About
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link nav-text" to="/contact">
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
+
+
+
+
+/* Dark background with gradient and white text */
+.custom-dark-navbar {
+  background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);
+  color: white;
+}
+
+/* Wrapper around logo to make it visible on dark background */
+.logo-wrapper {
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.logo-image {
+  height: 60px;
+  display: block;
+}
+
+/* Responsive width for navigation items */
+.responsive-width {
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .responsive-width {
+    width: 50%;
+  }
+}
+
+/* Navbar link styles */
+.nav-link {
+  color: #f1f1f1 !important;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+@media (min-width: 992px) {
+  .nav-link {
+    font-size: 18px;
+  }
+}
+
+/* Hover and active styles */
+.nav-link:hover,
+.nav-link.active {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.1);
+}

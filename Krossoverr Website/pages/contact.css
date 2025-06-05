@@ -1,0 +1,30 @@
+.custom-submit-btn {
+  background-color: #ffc107;
+  color: #000;
+  border: 2px solid #ffc107;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.custom-submit-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -100%; /* Start from right outside */
+  width: 100%;
+  height: 100%;
+  background: #1c1c1c;
+  z-index: -1;
+  transition: right 0.3s ease-in-out;
+}
+
+.custom-submit-btn:hover::before {
+  right: 0; /* Slide in to fill the button */
+}
+
+.custom-submit-btn:hover {
+  color: #ffc107;
+  border-color: #ffc107;
+}
