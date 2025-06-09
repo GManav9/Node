@@ -229,7 +229,6 @@ module.exports.getAllEmployees = (req, res) => {
     });
 };
 
-  
 module.exports.employeeProfile = async (req, res) => {
   const { email } = req.query;
   if (!email) {
@@ -243,6 +242,22 @@ module.exports.employeeProfile = async (req, res) => {
         .json({ success: false, msg: "Employee not found" });
     }
     res.status(200).json({ success: true, employee });
+  } catch (err) {
+    res.status(500).json({ success: false, msg: "Server error" });
+  }
+};
+
+module.exports.deleteEmployee = async (req, res) => {
+  try {
+    const deleted = await Employee.findByIdAndDelete(req.params.id);
+    if (!deleted) {
+      return res
+        .status(404)
+        .json({ success: false, msg: "Employee not found" });
+    }
+    res
+      .status(200)
+      .json({ success: true, msg: "Employee deleted successfully" });
   } catch (err) {
     res.status(500).json({ success: false, msg: "Server error" });
   }

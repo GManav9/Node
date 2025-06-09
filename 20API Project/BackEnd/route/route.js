@@ -16,5 +16,7 @@ route.delete("/delete-manager/:id", ctl.deleteManager);
 route.post("/add-employee", ctl.addEmployee);
 route.get("/all-employees", ctl.getAllEmployees);
 route.get("/employee-profile", ctl.employeeProfile);
+route.delete("/delete-employee/:id", ctl.deleteEmployee);
+// router.delete("/delete-employee/:id", controller.deleteEmployee);
 
 module.exports = route;

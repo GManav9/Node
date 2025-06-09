@@ -6,7 +6,10 @@ function EmployeesList() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    // Fetch all employees from backend
+    fetchEmployees();
+  }, []);
+
+  const fetchEmployees = () => {
     axios
       .get("http://localhost:8888/all-employees")
       .then((res) => {
@@ -18,7 +21,28 @@ function EmployeesList() {
         }
       })
       .catch(() => setError("Error fetching employees"));
-  }, []);
+  };
+
+  const handleDelete = async (id) => {
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this employee?"
+    );
+    if (!confirmDelete) return;
+
+    try {
+      const res = await axios.delete(
+        `http://localhost:8888/delete-employee/${id}`
+      );
+      if (res.data.success) {
+        setEmployees(employees.filter((emp) => emp._id !== id));
+      } else {
+        alert(res.data.msg || "Failed to delete employee");
+      }
+    } catch (err) {
+      alert("Error deleting employee");
+      console.error(err);
+    }
+  };
 
   if (error) {
     return (
@@ -42,6 +66,7 @@ function EmployeesList() {
               <th>Phone</th>
               <th>Manager ID</th>
               <th>Image</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -62,6 +87,14 @@ function EmployeesList() {
                   ) : (
                     "N/A"
                   )}
+                </td>
+                <td>
+                  <button
+                    className="btn btn-danger btn-sm"
+                    onClick={() => handleDelete(emp._id)}
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}
