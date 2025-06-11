@@ -1,6 +1,6 @@
 /* ---------- HERO SECTION ---------- */
 .hero-section {
-  background-color: #2f3e4e; /* Previously on hover */
+  background-color: #2b1d3a;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -9,16 +9,16 @@
 }
 
 .hero-content {
-  background-color: #394a5a; /* Previously on hover */
+  background-color: #3b2d4f;
   border-radius: 16px;
   padding: 3rem 2rem;
-  box-shadow: 0 15px 30px rgba(143, 169, 192, 0.5); /* Previously on hover */
+  box-shadow: 0 15px 30px rgba(255, 153, 112, 0.3);
   max-width: 850px;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
-  transform: scale(1.03); /* Previously on hover */
-  color: #dde6ed;
+  transform: scale(1.03);
+  color: #fefefe;
 }
 
 .hero-content .wavy-bg {
@@ -29,12 +29,12 @@
   height: 100%;
   background: radial-gradient(
     circle at 50% 0%,
-    rgba(143, 169, 192, 0.5) 0%,
+    rgba(255, 153, 112, 0.4) 0%,
     transparent 60%
   );
   z-index: 0;
   transform: scale(1.18);
-  filter: brightness(1.4);
+  filter: brightness(1.3);
   animation: slow-pulse 6s ease-in-out infinite alternate;
 }
 
@@ -46,13 +46,13 @@
 .hero-text-content h1,
 .hero-text-content p,
 .hero-text-content p strong {
-  color: #dde6ed;
+  color: #fefefe;
 }
 
 .hero-text-content a.btn {
   background-color: transparent;
-  border: 2px solid #8fa9c0;
-  color: #8fa9c0;
+  border: 2px solid #ff996e;
+  color: #ff996e;
   font-weight: 600;
   border-radius: 8px;
   padding: 1rem 2.5rem;
@@ -60,20 +60,17 @@
   margin-top: 1rem;
   display: inline-block;
   cursor: pointer;
-  box-shadow: 0 0 16px #8fa9c0cc;
+  box-shadow: 0 0 16px #ff996ecc;
   animation: pulse-glow 2.4s infinite ease-in-out;
 }
 
-/* Removed ALL hover effects */
-
-/* Animations */
 @keyframes pulse-glow {
   0%,
   100% {
-    box-shadow: 0 0 12px #8fa9c0cc;
+    box-shadow: 0 0 12px #ff996ecc;
   }
   50% {
-    box-shadow: 0 0 20px #8fa9c099;
+    box-shadow: 0 0 20px #ff996e99;
   }
 }
 
@@ -88,10 +85,9 @@
   }
 }
 
-/* Mobile Tweaks */
 @media (max-width: 767px) {
   .hero-section {
-    background-color: #394a5a;
+    background-color: #3b2d4f;
   }
   .hero-content {
     transform: none;
@@ -99,28 +95,23 @@
   }
   .hero-content a.btn {
     animation: none;
-    box-shadow: 0 0 12px #8fa9c0aa;
+    box-shadow: 0 0 12px #ff996eaa;
   }
   .hero-content .wavy-bg {
     animation: none;
     transform: scale(1.15);
   }
-  .hero-content img {
-    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.2));
-  }
 }
-/* ---------- HERO SECTION ---------- */
 
 /* ---------- Services SECTION ---------- */
-
 .services-section {
-  background: linear-gradient(135deg, #e3edf7, #cfdce8);
+  background: linear-gradient(135deg, #fae1dc, #f3c0b5);
   padding: 4rem 1rem;
-  color: #1a2a45;
+  color: #2b1d3a;
 }
 
 .services-section h2 {
-  color: #1a2a45;
+  color: #2b1d3a;
   font-weight: 700;
   margin-bottom: 2rem;
 }
@@ -139,43 +130,40 @@
 }
 
 .services-section .card-title {
-  color: #2f3e4e;
+  color: #3b2d4f;
   font-weight: 600;
 }
 
 .services-section .card-text {
-  color: #4f6277;
+  color: #5a4e6d;
   font-size: 0.95rem;
 }
 
 .services-section .btn-outline-primary {
-  border-color: #2f3e4e;
-  color: #2f3e4e;
+  border-color: #3b2d4f;
+  color: #3b2d4f;
   transition: all 0.3s ease;
 }
 
 .services-section .btn-outline-primary:hover {
-  background-color: #2f3e4e;
+  background-color: #3b2d4f;
   color: #ffffff;
-  border-color: #2f3e4e;
+  border-color: #3b2d4f;
 }
 
-/* ---------- Services SECTION ---------- */
-
-/* ---------- WELCOME SECTION (Updated to Match Hero Style) ---------- */
-/* ---------- WELCOME SECTION (Updated) ---------- */
+/* ---------- WELCOME SECTION ---------- */
 .welcome-section {
-  background-color: #2f3e4e;
+  background-color: #2b1d3a;
   padding: 4rem 1rem;
   overflow: hidden;
 }
 
 .welcome-section .container {
-  background-color: #394a5a;
+  background-color: #3b2d4f;
   border-radius: 16px;
   padding: 2.5rem;
-  box-shadow: 0 15px 30px rgba(143, 169, 192, 0.5);
-  color: #dde6ed;
+  box-shadow: 0 15px 30px rgba(255, 153, 112, 0.35);
+  color: #fefefe;
   display: flex;
   flex-direction: column;
 }
@@ -188,43 +176,40 @@
   }
 }
 
-/* Typography */
 .text-section h2 {
-  color: #ffffff; /* Made white */
+  color: #ffffff;
   font-size: 2rem;
   font-weight: 700;
 }
 
 .text-section p {
-  color: #dde6ed;
+  color: #fefefe;
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 1rem;
 }
 
-/* Button Style */
 .btn-maroon {
   background-color: transparent;
-  border: 2px solid #8fa9c0;
-  color: #8fa9c0;
+  border: 2px solid #ff996e;
+  color: #ff996e;
   font-weight: 600;
   border-radius: 8px;
   padding: 0.75rem 2rem;
   font-size: 1.125rem;
   display: inline-block;
   cursor: pointer;
-  box-shadow: 0 0 16px #8fa9c0cc;
+  box-shadow: 0 0 16px #ff996ecc;
   animation: pulse-glow 2.4s infinite ease-in-out;
   transition: all 0.3s ease;
 }
 
-/* Image Stack Styling */
 .image-stack {
   position: relative;
   width: 100%;
   max-width: 600px;
   margin-bottom: 2rem;
-  padding-left: 40px; /* Left padding added */
+  padding-left: 40px;
 }
 
 .main-img {
@@ -235,7 +220,7 @@
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   position: relative;
   left: -40px;
-  border: 4px solid #dde6ed;
+  border: 4px solid #fefefe;
 }
 
 .overlay-img {
@@ -244,29 +229,17 @@
   max-width: 280px;
   bottom: -20px;
   right: -20px;
-  border: 4px solid #dde6ed;
+  border: 4px solid #fefefe;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   border-radius: 12px;
   z-index: 1;
 }
 
-/* Animation */
-@keyframes pulse-glow {
-  0%,
-  100% {
-    box-shadow: 0 0 12px #8fa9c0cc;
-  }
-  50% {
-    box-shadow: 0 0 20px #8fa9c099;
-  }
-}
-
-/* Responsive Adjustments */
 @media (max-width: 768px) {
   .image-stack {
     max-width: 100%;
     margin: 0 auto 2rem auto;
-    padding-left: 0; /* Remove padding on small screens */
+    padding-left: 0;
   }
 
   .main-img {
@@ -291,69 +264,64 @@
   }
 }
 
-/* chooose u section css */
+/* ---------- CHOOSE US SECTION ---------- */
 .choose-us-section {
-  background-color: #2f3e4e; /* dark navy bg */
-  color: #dde6ed;
+  background-color: #2b1d3a;
+  color: #fefefe;
   padding: 4rem 2rem;
-  transition: background-color 0.6s ease-in-out, color 0.6s ease-in-out;
 }
 
 .choose-us-section h2 {
   font-weight: 700;
   margin-bottom: 2rem;
   text-align: center;
-  color: #ffffff; /* white heading */
+  color: #ffffff;
 }
 
 .choose-us-section .icon-box {
-  background-color: #394a5a; /* dark container box */
+  background-color: #3b2d4f;
   border-radius: 12px;
   padding: 2rem;
   margin-bottom: 2rem;
-  /* Shadow thoda halka kiya gaya */
-  box-shadow: 0 8px 15px rgba(143, 169, 192, 0.35);
+  box-shadow: 0 8px 15px rgba(255, 153, 112, 0.35);
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  color: #dde6ed;
+  color: #fefefe;
 }
 
 .choose-us-section .icon-box i {
   font-size: 2rem;
-  color: #8fa9c0; /* lighter icon color */
+  color: #ff996e;
   margin-bottom: 1rem;
 }
 
 .choose-us-section .icon-box h5 {
   font-weight: 600;
-  color: #dde6ed;
+  color: #fefefe;
 }
 
 .choose-us-section .icon-box p {
-  color: #c1d1e3; /* lighter text */
+  color: #f1d4cc;
   margin: 0.5rem 0 0;
 }
 
 .choose-us-section .icon-box:hover {
   transform: translateY(-8px);
-  box-shadow: 0 10px 20px rgba(143, 169, 192, 0.45);
+  box-shadow: 0 10px 20px rgba(255, 153, 112, 0.45);
 }
 
-/* Back side of the flip card */
 .choose-us-section .flip-card-back {
-  background-color: #8fa9c0;
+  background-color: #ff996e;
   color: white;
   padding: 2rem;
   border-radius: 12px;
 }
 
-/* Client Review Section */
+/* ---------- CLIENT REVIEW SECTION ---------- */
 .client-review-section {
-  background-color: #f1f8ff; /* matches your welcome section bg */
+  background-color: #fff4ef;
 }
 
 .client-review-swiper {
-  /* center the slides container */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -370,7 +338,7 @@
 }
 
 .quote-icon {
-  color: #6d0f1f; /* maroon from your btn */
+  color: #d24d2d;
 }
 
 .review-text {
@@ -389,12 +357,11 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  user-select: none;
 }
 
 .client-review-section .btn-outline-primary:hover {
-  background-color: #6d0f1f;
-  border-color: #6d0f1f;
+  background-color: #d24d2d;
+  border-color: #d24d2d;
   color: white;
 }
 
@@ -407,8 +374,7 @@
   }
 }
 
-/* client slider css */
-
+/* ---------- CLIENT SLIDER SECTION ---------- */
 .client-slider-section {
   background: #ffffff;
   padding: 60px 0;
@@ -417,16 +383,15 @@
 .client-heading {
   font-size: 2rem;
   font-weight: 700;
-  color: #0b0c4e;
+  color: #3b2d4f;
   margin-bottom: 2rem;
-  position: relative;
 }
 
 .client-heading::after {
   content: "";
   width: 50px;
   height: 3px;
-  background-color: #b11030;
+  background-color: #ff694a;
   display: block;
   margin: 0.5rem auto 0;
 }
@@ -462,7 +427,7 @@
 .swiper-button-next,
 .swiper-button-prev {
   color: #fff;
-  background-color: #6b1919;
+  background-color: #d24d2d;
   padding: 12px;
   border-radius: 4px;
   top: 50%;
@@ -482,12 +447,7 @@
   }
 }
 
-/* client slider css */
-
-.client-review-section {
-  background: linear-gradient(135deg, #e3edf7, #cfdce8);
-}
-
+.client-review-section,
 .client-slider-section {
-  background: linear-gradient(135deg, #e3edf7, #cfdce8);
+  background: linear-gradient(135deg, #fae1dc, #f3c0b5);
 }
