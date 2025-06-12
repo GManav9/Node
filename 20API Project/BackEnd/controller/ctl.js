@@ -1,31 +1,46 @@
-const schema = require("../model/schema"); // Admin & Employee schema
-const Manager = require("../model/managerschema"); // Manager schema
-const bcrypt = require("bcrypt");
-
+const schema = require("../model/schema"); // Admin schema
+const Manager = require("../model/managerschema");
 const Employee = require("../model/employeeschema");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const sendMail = require("../middleware/mailer");
 
-// Signup for Admin only
-module.exports.signup = async (req, res) => {
-  console.log("Request Body:", req.body);
+let otpStore = {}; // In-memory store for OTP
 
-  const user = await schema.findOne({ email: req.body.email });
-  if (user) {
-    return res.status(200).json({ msg: "User already registered" });
-  }
-
-  req.body.password = await bcrypt.hash(req.body.password, 10);
-  req.body.role = "admin";
-  req.body.isAdmin = true;
-
-  const newUser = await schema.create(req.body);
-  return res.status(200).json({
-    msg: "User successfully created!",
-    user: newUser,
-  });
+const getModelByRole = (role) => {
+  if (role === "admin") return schema;
+  if (role === "manager") return Manager;
+  if (role === "employee") return Employee;
+  throw new Error("Invalid role");
 };
 
-// LOGIN LOGIC
-// LOGIN LOGIC
+// ------------------ ADMIN SIGNUP ------------------
+module.exports.signup = async (req, res) => {
+  try {
+    const existingUser = await schema.findOne({ email: req.body.email });
+    if (existingUser) {
+      return res
+        .status(409)
+        .json({ success: false, msg: "Email already registered!" });
+    }
+
+    req.body.password = await bcrypt.hash(req.body.password, 10);
+    req.body.role = "admin";
+    req.body.isAdmin = true;
+
+    const newUser = await schema.create(req.body);
+    return res.status(201).json({
+      success: true,
+      msg: "Admin registered successfully!",
+      user: newUser,
+    });
+  } catch (err) {
+    console.error("Signup Error:", err);
+    res.status(500).json({ success: false, msg: "Server error during signup" });
+  }
+};
+
+// ------------------ LOGIN ------------------
 module.exports.login = async (req, res) => {
   try {
     const { email, password, role } = req.body;
@@ -39,27 +54,17 @@ module.exports.login = async (req, res) => {
     let user = null;
 
     if (role === "admin") {
-      user =
-        (await schema.findOne({ email })) ||
-        (await schema.findOne({ name: email }));
+      user = await schema.findOne({ $or: [{ email }, { name: email }] });
     } else if (role === "manager") {
-      user =
-        (await Manager.findOne({ email })) ||
-        (await Manager.findOne({ username: email }));
+      user = await Manager.findOne({ $or: [{ email }, { username: email }] });
     } else if (role === "employee") {
-      user =
-        (await Employee.findOne({ email })) ||
-        (await Employee.findOne({ username: email }));
+      user = await Employee.findOne({ $or: [{ email }, { username: email }] });
     } else {
       return res.status(400).json({ success: false, msg: "Invalid role" });
     }
 
     if (!user) {
       return res.status(404).json({ success: false, msg: "User not found" });
-    }
-
-    if (user.role && user.role !== role) {
-      return res.status(403).json({ success: false, msg: "Role mismatch" });
     }
 
     const passwordMatch = await bcrypt.compare(password, user.password);
@@ -83,17 +88,15 @@ module.exports.login = async (req, res) => {
   }
 };
 
-// DASHBOARD
+// ------------------ DASHBOARD ------------------
 module.exports.dashboard = async (req, res) => {
   const { email } = req.query;
-
   if (!email) {
     return res.status(400).json({ success: false, msg: "Email is required" });
   }
 
   const user =
     (await schema.findOne({ email })) || (await Manager.findOne({ email }));
-
   if (!user) {
     return res.status(404).json({ success: false, msg: "User not found" });
   }
@@ -107,7 +110,7 @@ module.exports.dashboard = async (req, res) => {
   });
 };
 
-// ADD MANAGER
+// ------------------ ADD MANAGER ------------------
 module.exports.addManager = async (req, res) => {
   const { username, email, phone, password, adminId } = req.body;
 
@@ -121,7 +124,7 @@ module.exports.addManager = async (req, res) => {
   if (existing) {
     return res
       .status(409)
-      .json({ success: false, msg: "Manager already exists" });
+      .json({ success: false, msg: "Email already registered!" });
   }
 
   const hashedPassword = await bcrypt.hash(password, 10);
@@ -133,7 +136,6 @@ module.exports.addManager = async (req, res) => {
     password: hashedPassword,
     adminId,
   });
-
   await newManager.save();
 
   return res
@@ -141,7 +143,7 @@ module.exports.addManager = async (req, res) => {
     .json({ success: true, msg: "Manager added successfully!" });
 };
 
-// GET ALL MANAGERS
+// ------------------ GET ALL MANAGERS ------------------
 module.exports.getAllManagers = async (req, res) => {
   try {
     const managers = await Manager.find().populate("adminId", "name email");
@@ -151,7 +153,7 @@ module.exports.getAllManagers = async (req, res) => {
   }
 };
 
-// DELETE MANAGER
+// ------------------ DELETE MANAGER ------------------
 module.exports.deleteManager = async (req, res) => {
   try {
     const deleted = await Manager.findByIdAndDelete(req.params.id);
@@ -166,7 +168,8 @@ module.exports.deleteManager = async (req, res) => {
   }
 };
 
-exports.managerDashboard = async (req, res) => {
+// ------------------ MANAGER DASHBOARD ------------------
+module.exports.managerDashboard = async (req, res) => {
   const { email } = req.query;
 
   try {
@@ -174,7 +177,6 @@ exports.managerDashboard = async (req, res) => {
       "adminId",
       "name email"
     );
-
     if (!manager) {
       return res.status(404).json({ success: false, msg: "Manager not found" });
     }
@@ -186,6 +188,7 @@ exports.managerDashboard = async (req, res) => {
   }
 };
 
+// ------------------ ADD EMPLOYEE ------------------
 module.exports.addEmployee = async (req, res) => {
   const { username, email, phone, password, image, managerId } = req.body;
 
@@ -197,7 +200,7 @@ module.exports.addEmployee = async (req, res) => {
   if (existing) {
     return res
       .status(409)
-      .json({ success: false, msg: "Employee already exists" });
+      .json({ success: false, msg: "Email already registered!" });
   }
 
   const hashedPassword = await bcrypt.hash(password, 10);
@@ -210,7 +213,6 @@ module.exports.addEmployee = async (req, res) => {
     image,
     managerId,
   });
-
   await newEmployee.save();
 
   return res
@@ -218,6 +220,7 @@ module.exports.addEmployee = async (req, res) => {
     .json({ success: true, msg: "Employee added successfully" });
 };
 
+// ------------------ GET ALL EMPLOYEES ------------------
 module.exports.getAllEmployees = (req, res) => {
   Employee.find()
     .then((employees) => {
@@ -229,6 +232,7 @@ module.exports.getAllEmployees = (req, res) => {
     });
 };
 
+// ------------------ EMPLOYEE PROFILE ------------------
 module.exports.employeeProfile = async (req, res) => {
   const { email } = req.query;
   if (!email) {
@@ -247,6 +251,7 @@ module.exports.employeeProfile = async (req, res) => {
   }
 };
 
+// ------------------ DELETE EMPLOYEE ------------------
 module.exports.deleteEmployee = async (req, res) => {
   try {
     const deleted = await Employee.findByIdAndDelete(req.params.id);
@@ -260,5 +265,63 @@ module.exports.deleteEmployee = async (req, res) => {
       .json({ success: true, msg: "Employee deleted successfully" });
   } catch (err) {
     res.status(500).json({ success: false, msg: "Server error" });
+  }
+};
+
+// ------------------ FORGOT PASSWORD ------------------
+exports.forgotPassword = async (req, res) => {
+  const { email, role } = req.body;
+  try {
+    const Model = getModelByRole(role);
+    const user = await Model.findOne({ email });
+    if (!user) return res.status(404).json({ message: "Email not registered" });
+
+    const otp = Math.floor(100000 + Math.random() * 900000).toString();
+    otpStore[`${email}_${role}`] = {
+      otp,
+      expiresAt: Date.now() + 5 * 60 * 1000,
+    };
+
+    await sendMail(
+      email,
+      "OTP Verification",
+      `<h3>Your OTP is <b>${otp}</b></h3>`
+    );
+
+    res.json({ success: true, message: "OTP sent successfully" });
+  } catch (err) {
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+};
+
+// ------------------ VERIFY OTP ------------------
+exports.verifyOtp = (req, res) => {
+  const { email, otp, role } = req.body;
+  const record = otpStore[`${email}_${role}`];
+
+  if (!record || record.otp !== otp || Date.now() > record.expiresAt) {
+    return res
+      .status(400)
+      .json({ success: false, message: "Invalid or expired OTP" });
+  }
+
+  res.json({ success: true, message: "OTP verified" });
+};
+
+// ------------------ RESET PASSWORD ------------------
+exports.resetPassword = async (req, res) => {
+  const { email, role, password } = req.body;
+  try {
+    const Model = getModelByRole(role);
+    const hashed = await bcrypt.hash(password, 10);
+    await Model.findOneAndUpdate({ email }, { password: hashed });
+
+    delete otpStore[`${email}_${role}`];
+
+    res.json({ success: true, message: "Password reset successfully" });
+  } catch {
+    res
+      .status(500)
+      .json({ success: false, message: "Error resetting password" });
   }
 };

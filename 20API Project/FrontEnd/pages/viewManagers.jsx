@@ -35,7 +35,7 @@ function AllManagers() {
       .then((res) => {
         if (res.data.success) {
           setSuccess("Manager deleted successfully.");
-          fetchManagers(); // refresh list
+          fetchManagers();
         } else {
           setError("Failed to delete manager.");
         }
@@ -47,41 +47,61 @@ function AllManagers() {
 
   return (
     <div className="container mt-5">
-      <h2 className="mb-4">All Managers</h2>
-      {error && <div className="alert alert-danger">{error}</div>}
-      {success && <div className="alert alert-success">{success}</div>}
-      <div className="table-responsive">
-        <table className="table table-striped shadow">
-          <thead className="table-dark">
-            <tr>
-              <th>Manager's Name</th>
-              <th>Email</th>
-              <th>Phone</th>
-              <th>Admin Name</th>
-              <th>Admin Email</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {managers.map((manager) => (
-              <tr key={manager._id}>
-                <td>{manager.username}</td>
-                <td>{manager.email}</td>
-                <td>{manager.phone}</td>
-                <td>{manager.adminId?.name || "N/A"}</td>
-                <td>{manager.adminId?.email || "N/A"}</td>
-                <td>
-                  <button
-                    className="btn btn-danger btn-sm"
-                    onClick={() => handleDelete(manager._id)}
-                  >
-                    Delete
-                  </button>
-                </td>
+      <div className="bg-white rounded shadow p-4">
+        <h2 className="mb-4 text-center text-primary">All Managers</h2>
+
+        {error && (
+          <div className="alert alert-danger text-center fw-semibold">
+            {error}
+          </div>
+        )}
+        {success && (
+          <div className="alert alert-success text-center fw-semibold">
+            {success}
+          </div>
+        )}
+
+        <div className="table-responsive">
+          <table className="table table-bordered table-hover align-middle text-center">
+            <thead className="table-dark">
+              <tr>
+                <th>Manager Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Admin Name</th>
+                <th>Admin Email</th>
+                <th>Actions</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {managers.length === 0 ? (
+                <tr>
+                  <td colSpan="6" className="text-muted">
+                    No managers found.
+                  </td>
+                </tr>
+              ) : (
+                managers.map((manager) => (
+                  <tr key={manager._id}>
+                    <td>{manager.username}</td>
+                    <td>{manager.email}</td>
+                    <td>{manager.phone}</td>
+                    <td>{manager.adminId?.name || "N/A"}</td>
+                    <td>{manager.adminId?.email || "N/A"}</td>
+                    <td>
+                      <button
+                        className="btn btn-outline-danger btn-sm"
+                        onClick={() => handleDelete(manager._id)}
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

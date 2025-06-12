@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Login.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -9,6 +10,7 @@ function Login() {
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("admin");
   const [error, setError] = useState("");
+  const [showToast, setShowToast] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -23,23 +25,32 @@ function Login() {
 
       if (res.data.success) {
         setError("");
+        const userEmail = res.data.user?.email || emailOrUsername;
 
-        // ✅ Navigate based on user role
-        if (res.data.role === "admin") {
-          navigate(`/admin-dashboard?email=${emailOrUsername}`);
-        } else if (res.data.role === "manager") {
-          navigate(`/manager-dashboard?email=${emailOrUsername}`);
-        } else if (res.data.role === "employee") {
-          navigate(`/employee-dashboard?email=${emailOrUsername}`);
-        } else {
-          alert("Unknown role. Please contact admin.");
-        }
+        setShowToast(true); // Show toast
+        setTimeout(() => {
+          setShowToast(false); // Hide after 3s
+
+          switch (res.data.role) {
+            case "admin":
+              navigate("/admin-dashboard", { state: { email: userEmail } });
+              break;
+            case "manager":
+              navigate("/manager-dashboard", { state: { email: userEmail } });
+              break;
+            case "employee":
+              navigate("/employee-dashboard", { state: { email: userEmail } });
+              break;
+            default:
+              alert("Unknown role. Please contact support.");
+          }
+        }, 3000);
       } else {
         setError(res.data.msg || "Invalid credentials");
       }
-    } catch (error) {
-      console.error("Login Error:", error.response?.data || error.message);
-      setError("Login failed. Please check your credentials and try again.");
+    } catch (err) {
+      console.error("Login Error:", err.response?.data || err.message);
+      setError("Login failed. Please check credentials and try again.");
     }
   };
 
@@ -112,6 +123,40 @@ function Login() {
           </div>
         </form>
       </div>
+
+      {/* 🟢 Custom Toast (Top Center) */}
+      {showToast && (
+        <div
+          className="custom-toast animate__animated animate__fadeInDown"
+          style={{
+            position: "fixed",
+            top: "20px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            backgroundColor: "#28a745",
+            color: "#fff",
+            padding: "12px 20px",
+            borderRadius: "10px",
+            boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+            zIndex: 9999,
+            display: "flex",
+            alignItems: "center",
+            gap: "10px",
+            fontWeight: "500",
+          }}
+        >
+          <i
+            className="bi bi-check-circle-fill"
+            style={{ fontSize: "1.2rem" }}
+          ></i>
+          Login Successful
+          <button
+            type="button"
+            className="btn-close btn-close-white ms-3"
+            onClick={() => setShowToast(false)}
+          ></button>
+        </div>
+      )}
     </div>
   );
 }

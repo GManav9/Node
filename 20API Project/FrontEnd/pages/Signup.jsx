@@ -3,6 +3,7 @@ import "./Signup.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 function Signup() {
   const [name, setName] = useState("");
@@ -11,28 +12,45 @@ function Signup() {
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
-    e.preventDefault(); // Prevent form reload
+    e.preventDefault();
 
     axios
       .post("http://localhost:8888/signup", {
         name,
         email,
         password,
-        role: "admin", // <-- fixed role added here
+        role: "admin",
       })
-      .then(
-        (res) => {
-          if (res && res.status === 200) {
-            alert(res.data.msg);
-            navigate("/login"); // Redirect to login
-          } else {
-            alert("Registration failed. Try again.");
-          }
-        },
-        (err) => {
-          alert("Something went wrong. Registration failed.");
+      .then((res) => {
+        if (res && res.status === 201) {
+          Swal.fire({
+            icon: "success",
+            title: "Registration Successful",
+            text: res.data.msg || "You have successfully registered!",
+            confirmButtonColor: "#007bff",
+            confirmButtonText: "Go to Login",
+          }).then(() => {
+            navigate("/login");
+          });
         }
-      );
+      })
+      .catch((error) => {
+        if (error.response && error.response.status === 409) {
+          Swal.fire({
+            icon: "warning",
+            title: "Email Already Exists",
+            text: error.response.data.msg,
+            confirmButtonColor: "#ffc107",
+          });
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Oops!",
+            text: "Something went wrong. Registration failed.",
+            confirmButtonColor: "#dc3545",
+          });
+        }
+      });
   };
 
   return (

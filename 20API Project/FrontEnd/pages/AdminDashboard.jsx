@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function AdminDashboard() {
   const [message, setMessage] = useState("Loading...");
   const [showForm, setShowForm] = useState(false);
 
-  // Manager form fields
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -14,18 +14,19 @@ function AdminDashboard() {
 
   const [adminId, setAdminId] = useState(null);
 
-  useEffect(() => {
-    const queryParams = new URLSearchParams(window.location.search);
-    const emailFromURL = queryParams.get("email");
+  const navigate = useNavigate();
+  const location = useLocation();
 
-    if (!emailFromURL) {
-      setMessage("No user email found in URL.");
+  useEffect(() => {
+    const emailFromState = location.state?.email;
+
+    if (!emailFromState) {
+      setMessage("No user email found in state.");
       return;
     }
 
-    // Fetch admin dashboard data
     axios
-      .get(`http://localhost:8888/dashboard?email=${emailFromURL}`)
+      .get(`http://localhost:8888/dashboard?email=${emailFromState}`)
       .then((res) => {
         if (res.data.success && res.data.role.toLowerCase() === "admin") {
           setMessage(`Hello Admin - ${res.data.name}`);
@@ -37,7 +38,7 @@ function AdminDashboard() {
       .catch(() => {
         setMessage("Error fetching dashboard data.");
       });
-  }, []);
+  }, [location.state]);
 
   const toggleForm = () => {
     setShowForm((prev) => !prev);
@@ -89,10 +90,21 @@ function AdminDashboard() {
       });
   };
 
+  const handleLogout = () => {
+    localStorage.clear();
+    sessionStorage.clear();
+    navigate("/login");
+  };
+
   return (
     <div className="container mt-5">
-      <div className="card shadow p-3 text-center bg-light mb-4">
-        <h2 style={{ textTransform: "capitalize" }}>{message}</h2>
+      <div className="card shadow p-3 bg-light mb-4">
+        <div className="d-flex justify-content-between align-items-center">
+          <h2 className="mb-0 text-capitalize">{message}</h2>
+          <button className="btn btn-danger" onClick={handleLogout}>
+            Logout
+          </button>
+        </div>
       </div>
 
       {message.toLowerCase().includes("admin") && (
@@ -104,7 +116,7 @@ function AdminDashboard() {
 
             <button
               className="btn btn-secondary"
-              onClick={() => (window.location.href = "/all-managers")}
+              onClick={() => navigate("/all-managers")}
             >
               View All Managers
             </button>

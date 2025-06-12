@@ -1,34 +1,33 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function ManagerDashboard() {
   const [manager, setManager] = useState(null);
   const [error, setError] = useState("");
   const [showForm, setShowForm] = useState(false);
-  const navigate = useNavigate();
   const [employeeData, setEmployeeData] = useState({
     username: "",
     email: "",
     phone: "",
     password: "",
-    image: "", // you can expand this to use file upload
+    image: "",
   });
   const [message, setMessage] = useState("");
 
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const email = params.get("email");
+  const navigate = useNavigate();
+  const location = useLocation();
+  const email = location.state?.email; // ✅ Email from route state
 
+  useEffect(() => {
     if (!email) {
-      setError("Email not provided in URL");
+      setError("Email not provided in route state");
       return;
     }
 
     axios
       .get(`http://localhost:8888/manager-dashboard?email=${email}`)
       .then((res) => {
-        console.log("API Response:", res.data);
         if (res.data.success) {
           setManager(res.data.manager);
           setError("");
@@ -40,7 +39,7 @@ function ManagerDashboard() {
         console.error("API Error:", err);
         setError("Error fetching manager data");
       });
-  }, []);
+  }, [email]);
 
   const handleChange = (e) => {
     setEmployeeData({ ...employeeData, [e.target.name]: e.target.value });
@@ -73,6 +72,12 @@ function ManagerDashboard() {
     }
   };
 
+  const handleLogout = () => {
+    localStorage.clear();
+    sessionStorage.clear();
+    navigate("/login");
+  };
+
   if (error) {
     return (
       <div className="container mt-5">
@@ -91,7 +96,12 @@ function ManagerDashboard() {
 
   return (
     <div className="container mt-5">
-      <h2>Welcome Manager: {manager.username || manager.name}</h2>
+      <div className="d-flex justify-content-between align-items-center">
+        <h2>Welcome Manager: {manager.username || manager.name}</h2>
+        <button className="btn btn-danger" onClick={handleLogout}>
+          Logout
+        </button>
+      </div>
 
       <div className="card p-3 my-4 shadow-sm">
         <h4>Manager Details</h4>

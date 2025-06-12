@@ -9,6 +9,9 @@ import ManagerDashboard from "../pages/ManagerDashboard";
 import EmployeeDashboard from "../pages/EmployeeDashboard";
 import AdminDashboard from "../pages/AdminDashboard";
 import EmployeesList from "../pages/EmployeeList";
+import ForgotPassword from "../pages/ForgotPassword";
+import VerifyOtp from "../pages/VerifyOtp";
+import ResetPassword from "../pages/ResetPassword";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -40,7 +43,20 @@ function App() {
             element={<AllManagers></AllManagers>}
           ></Route>
 
-          <Route path="/employees" element={<EmployeesList></EmployeesList>}></Route>
+          <Route
+            path="/employees"
+            element={<EmployeesList></EmployeesList>}
+          ></Route>
+
+          <Route
+            path="/forgot-password"
+            element={<ForgotPassword></ForgotPassword>}
+          ></Route>
+          <Route path="/verify-otp" element={<VerifyOtp></VerifyOtp>}></Route>
+          <Route
+            path="/reset-password"
+            element={<ResetPassword></ResetPassword>}
+          ></Route>
         </Routes>
       </BrowserRouter>
     </>

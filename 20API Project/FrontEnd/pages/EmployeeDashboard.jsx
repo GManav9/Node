@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function EmployeeDashboard() {
   const [employee, setEmployee] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  // URL se query param nikalne ke liye useLocation
+  const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
-    const params = new URLSearchParams(location.search);
-    const email = params.get("email"); // jo email login me bheja tha
+    const email = location.state?.email;
 
     if (!email) {
       setError("Employee email missing");
@@ -34,14 +33,24 @@ function EmployeeDashboard() {
         setError("Failed to load profile");
         setLoading(false);
       });
-  }, [location.search]);
+  }, [location.state]);
+
+  const handleLogout = () => {
+    navigate("/login");
+  };
 
   if (loading) return <div>Loading profile...</div>;
   if (error) return <div className="alert alert-danger">{error}</div>;
 
   return (
     <div className="container mt-5">
-      <h2>Welcome, {employee.username || employee.email}</h2>
+      <div className="d-flex justify-content-between align-items-center mb-3">
+        <h2 className="mb-0">Welcome, {employee.username || employee.email}</h2>
+        <button className="btn btn-danger" onClick={handleLogout}>
+          Logout
+        </button>
+      </div>
+
       <div className="card p-3">
         <p>
           <strong>Email:</strong> {employee.email}
@@ -52,7 +61,6 @@ function EmployeeDashboard() {
         <p>
           <strong>Phone:</strong> {employee.phone}
         </p>
-        {/* Agar image hai to dikhao */}
         {employee.image && (
           <img
             src={employee.image}
@@ -60,7 +68,6 @@ function EmployeeDashboard() {
             style={{ width: "150px", borderRadius: "50%" }}
           />
         )}
-        {/* Aap apne hisaab se aur fields add kar sakte hain */}
       </div>
     </div>
   );

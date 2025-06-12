@@ -19,4 +19,16 @@ route.get("/employee-profile", ctl.employeeProfile);
 route.delete("/delete-employee/:id", ctl.deleteEmployee);
 // router.delete("/delete-employee/:id", controller.deleteEmployee);
 
+
+// FORGOT PASSWORD - send OTP
+route.post("/forgot-password", ctl.forgotPassword);
+
+// VERIFY OTP
+route.post("/verify-otp", ctl.verifyOtp);
+
+// RESET PASSWORD
+route.post("/reset-password", ctl.resetPassword);
+
+
 module.exports = route;
+
