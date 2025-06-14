@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongoose": "^8.15.2",
+    "router": "^2.2.0",
+    "schema": "^0.2.1"
+  }
+}
