@@ -4,7 +4,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import { BrowserRouter } from "react-router";
 // import Mainroutes from "../routes/Mainroutes";
-import Mainroutes from "../routes/MainRoutes";
+import Mainroutes from "../src/routes/MainRoutes";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "swiper/css";

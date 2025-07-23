@@ -1,0 +1,15 @@
+body {
+  overflow-x: hidden;
+}
+
+.map-section iframe {
+  display: block;
+  max-width: 100%;
+}
+
+@media (max-width: 576px) {
+  .form-control-lg {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+}

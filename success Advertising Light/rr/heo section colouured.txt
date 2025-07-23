@@ -1,0 +1,99 @@
+
+      <section
+        className="hero-section position-relative"
+        style={{
+          backgroundColor: "#fdf8ec", // soft yellow brand tone
+          minHeight: "100vh",
+          display: "flex",
+          alignItems: "center",
+          padding: "3rem 1rem",
+          overflow: "hidden",
+        }}
+      >
+        <div className="container">
+          <div
+            className="hero-content"
+            style={{
+              backgroundColor: "#ffffff",
+              borderRadius: "16px",
+              padding: "3rem 2rem",
+              boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
+              maxWidth: "850px",
+              margin: "0 auto",
+              position: "relative",
+              overflow: "hidden",
+            }}
+          >
+            {/* Wavy background effect */}
+            <div
+              className="wavy-bg"
+              style={{
+                content: '""',
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                background:
+                  "radial-gradient(circle at 50% 0%, rgba(255,215,0,0.1) 0%, transparent 70%)",
+                zIndex: 0,
+                transition: "all 0.6s ease-in-out",
+              }}
+            ></div>
+
+            <div style={{ position: "relative", zIndex: 1 }}>
+              <img
+                src={logo}
+                alt="Krossoverr Brand Solutions"
+                style={{
+                  width: "240px",
+                  marginBottom: "1.5rem",
+                  filter: "drop-shadow(0 0 4px rgba(0,0,0,0.2))",
+                }}
+              />
+              <h1 className="display-5 fw-bold text-dark">
+                Empowering Brands with Bold Solutions
+              </h1>
+              <p className="lead mt-3 text-secondary">
+                At <strong>Krossoverr Brand Solutions</strong>, we specialize in
+                creating impactful branding, advertising, and marketing
+                strategies. From digital content to event activations, MICE to
+                corporate gifting, we build compelling brand journeys that
+                resonate and perform.
+              </p>
+              <a
+                href="#services"
+                className="btn btn-lg mt-4 px-5 py-3"
+                style={{
+                  backgroundColor: "#FFD700",
+                  border: "none",
+                  color: "#000",
+                  fontWeight: "600",
+                  borderRadius: "8px",
+                  transition: "all 0.3s ease-in-out",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = "#000";
+                  e.target.style.color = "#FFD700";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = "#FFD700";
+                  e.target.style.color = "#000";
+                }}
+              >
+                Explore Our Services
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+.hero-content:hover .wavy-bg {
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(255, 215, 0, 0.2) 0%,
+    transparent 60%
+  );
+  transform: scale(1.1);
+}

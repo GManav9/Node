@@ -1,0 +1,202 @@
+
+      <section className="hero-section">
+        <div className="container">
+          <div className="hero-content">
+            <div>
+              <img
+                src={logo}
+                alt="Krossoverr Brand Solutions"
+                style={{
+                  width: "240px",
+                  marginBottom: "1.5rem",
+                  filter: "drop-shadow(0 0 4px rgba(0,0,0,0.2))",
+                }}
+              />
+              <h1 className="display-5 fw-bold">
+                Empowering Brands with Bold Solutions
+              </h1>
+              <p className="lead mt-3">
+                At <strong>Krossoverr Brand Solutions</strong>, we specialize in
+                creating impactful branding, advertising, and marketing
+                strategies. From digital content to event activations, MICE to
+                corporate gifting, we build compelling brand journeys that
+                resonate and perform.
+              </p>
+              <a href="#services" className="btn btn-lg px-5 py-3">
+                Explore Our Services
+              </a>
+            </div>
+            <div className="wavy-bg"></div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+
+.hero-section {
+  background-color: #e8e2d6; /* warm beige */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 3rem 1rem;
+  overflow: hidden;
+  transition: background-color 0.6s ease-in-out;
+}
+
+.hero-content {
+  background-color: #f6f3ef; /* light taupe */
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  max-width: 850px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.6s ease-in-out, color 0.6s ease-in-out,
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #4b4b4b; /* dark grey */
+}
+
+/* Wavy background */
+.hero-content .wavy-bg {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(201, 158, 75, 0.15) 0%,
+    transparent 70%
+  );
+  z-index: 0;
+  transition: background 0.6s ease-in-out, transform 0.6s ease-in-out,
+    filter 0.6s ease-in-out;
+  transform-origin: center top;
+  transform: scale(1);
+  filter: brightness(1);
+}
+
+/* Content wrapper */
+.hero-content > div {
+  position: relative;
+  z-index: 1;
+}
+
+/* Button base style - dark text on light background */
+.hero-content a.btn {
+  background-color: #c99e4b; /* warm goldenrod */
+  border: none;
+  color: #4b4b4b; /* dark grey */
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+  margin-top: 1rem;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+/* Button hover/focus */
+.hero-content a.btn:hover,
+.hero-content a.btn:focus {
+  filter: brightness(1.1);
+  transform: scale(1.05);
+}
+
+/* --- HOVER EFFECT ON HERO CONTENT --- */
+.hero-content:hover {
+  background: linear-gradient(
+    180deg,
+    #2f3e4e 0%,
+    #394a5a 100%
+  ); /* muted dark slate blue gradient */
+  color: #dde6ed; /* soft light blue */
+  box-shadow: 0 15px 30px rgba(143, 169, 192, 0.5);
+  transform: scale(1.03);
+}
+
+/* Text color changes on hover */
+.hero-content:hover h1,
+.hero-content:hover p,
+.hero-content:hover strong,
+.hero-content:hover a.btn {
+  color: #dde6ed !important; /* force light blue text */
+}
+
+/* Button style changes on hover */
+.hero-content:hover a.btn {
+  background-color: transparent;
+  border: 2px solid #8fa9c0; /* soft blue-grey */
+  color: #8fa9c0;
+  box-shadow: 0 0 16px #8fa9c0cc;
+  animation: pulse-glow 2.4s infinite ease-in-out;
+}
+
+/* Wavy background changes on hover */
+.hero-content:hover .wavy-bg {
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(143, 169, 192, 0.5) 0%,
+    transparent 60%
+  );
+  transform: scale(1.18);
+  filter: brightness(1.4);
+  animation: slow-pulse 6s ease-in-out infinite alternate;
+}
+
+/* Logo glow on hover */
+.hero-content:hover img {
+  filter: drop-shadow(0 0 6px #c99e4b) /* subtle warm gold glow */
+    drop-shadow(0 0 10px #c99e4b99);
+  transition: filter 0.4s ease-in-out;
+}
+
+/* Animations */
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 12px #8fa9c0cc;
+  }
+  50% {
+    box-shadow: 0 0 20px #8fa9c099;
+  }
+}
+
+@keyframes slow-pulse {
+  0% {
+    transform: scale(1.15);
+    filter: brightness(1.3);
+  }
+  100% {
+    transform: scale(1.2);
+    filter: brightness(1.45);
+  }
+}
+
+/* MOBILE: reduce scale and glow animations */
+@media (max-width: 767px) {
+  .hero-content:hover {
+    transform: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    background: #394a5a;
+  }
+  .hero-content:hover a.btn {
+    animation: none;
+    box-shadow: 0 0 12px #8fa9c0aa;
+  }
+  .hero-content:hover .wavy-bg {
+    animation: none;
+    transform: scale(1.15);
+  }
+  .hero-content:hover img {
+    filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.2));
+  }
+}

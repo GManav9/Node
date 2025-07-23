@@ -1,0 +1,168 @@
+.krossoverr-footer {
+  background-color: #2f3e4e;
+  color: #dde6ed;
+  padding: 4rem 1rem 2rem;
+  font-size: 0.95rem;
+}
+
+/* Brand Title */
+.footer-brand {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+/* Brand Description */
+.footer-description {
+  line-height: 1.7;
+  color: #cbd8e2;
+  margin-bottom: 1rem;
+}
+
+/* Section Headings */
+.footer-heading {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+/* Link List */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-links a {
+  color: #dde6ed;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+  display: inline-block;
+  font-size: 0.95rem;
+}
+
+.footer-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #004a87; /* 🔵 Logo Blue underline */
+  transition: width 0.3s ease;
+  box-shadow: 0 0 4px #004a87aa;
+}
+
+.footer-links a:hover {
+  color: #e30613; /* 🔴 Red */
+  text-shadow: 0 0 6px rgba(227, 6, 19, 0.5);
+  font-weight: 600;
+  font-size: 1.05rem;
+  transform: translateX(2px);
+}
+
+.footer-links a:hover::after {
+  width: 100%;
+}
+
+/* Contact Info */
+.footer-contact {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #cbd8e2;
+}
+
+.footer-contact svg {
+  color: #e30613;
+  transition: transform 0.3s ease;
+}
+
+.footer-contact svg:hover {
+  transform: scale(1.2);
+  color: #ffffff;
+}
+
+/* Divider */
+.footer-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 2rem 0 1.5rem;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  font-size: 0.85rem;
+  color: #a8bfd8;
+}
+
+.footer-bottom a {
+  color: #e30613;
+  font-weight: 500;
+}
+
+/* Social Icons (bottom inline) */
+.footer-socials a {
+  color: #8fa9c0;
+  margin-left: 1rem;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #e30613;
+  transform: scale(1.2) translateY(-2px);
+  text-shadow: 0 0 8px rgba(227, 6, 19, 0.4);
+}
+
+/* Social List (icon + text vertical) */
+.footer-social-list li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-social-list a {
+  color: #dde6ed;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.footer-social-list a:hover {
+  color: #e30613;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transform: translateX(4px);
+}
+
+.footer-social-list svg {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer-social-list a:hover svg {
+  transform: scale(1.2);
+  color: #e30613;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-socials a {
+    margin-left: 0.8rem;
+  }
+}

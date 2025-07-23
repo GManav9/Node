@@ -1,0 +1,74 @@
+/* ---------- SERVICES SECTION ---------- */
+
+.services-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+}
+
+.service-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+  gap: 2rem;
+}
+
+.service-section.reverse {
+  flex-direction: row-reverse;
+}
+
+.service-image {
+  flex: 1 1 40%;
+  max-width: 500px;
+}
+
+.service-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-content {
+  flex: 1 1 55%;
+}
+
+.service-content h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.service-content p {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+
+@media (max-width: 768px) {
+  .service-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .service-section.reverse {
+    flex-direction: column;
+  }
+
+  .service-image,
+  .service-content {
+    flex: 1 1 100%;
+  }
+
+  .service-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .service-content p {
+    font-size: 1rem;
+  }
+}

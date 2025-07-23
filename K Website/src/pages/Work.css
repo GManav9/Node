@@ -1,0 +1,331 @@
+.work-banner {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  background-color: #000;
+  padding: 0 1rem;
+}
+
+.work-banner .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(143, 0, 255, 0.6),
+    rgba(255, 60, 172, 0.5)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.work-text {
+  max-width: 800px;
+  z-index: 2;
+}
+
+.work-text h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.work-text p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.btn-gradient {
+  background: linear-gradient(135deg, #8f00ff, #ff3cac);
+  color: #fff;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 6px 15px rgba(143, 0, 255, 0.3);
+  transition: 0.3s ease;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(135deg, #ff3cac, #8f00ff);
+  box-shadow: 0 8px 20px rgba(143, 0, 255, 0.5);
+}
+
+/* Split Section */
+/* Already exists */
+.work-split {
+  background: linear-gradient(160deg, #fbc2eb 0%, #a6c1ee 60%, #f9f586 100%);
+  padding: 5rem 2rem;
+}
+
+.work-split-container {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+}
+
+/* Reverse alignment for second block */
+.work-split-container.reverse {
+  flex-direction: row-reverse;
+}
+
+.work-split-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.work-split-content {
+  max-width: 600px;
+  color: #301014;
+}
+
+.work-split-content h5 {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #8f00ff;
+  margin-bottom: 0.5rem;
+}
+
+.work-split-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.work-split-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .work-split-container,
+  .work-split-container.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .work-split-content h2 {
+    font-size: 2rem;
+  }
+}
+
+
+
+
+/* contact css */
+
+.contact-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #fbc2eb, #a6c1ee, #f9f586);
+  text-align: center;
+  color: #301014; /* base text color */
+}
+
+.contact-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.contact-container h5 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  color: #51291e; /* dark purple tone for visibility */
+  margin-bottom: 0.5rem;
+}
+
+.contact-container h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #301014; /* headline visible and bold */
+  margin-bottom: 3rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.form-row input {
+  flex: 1;
+  min-width: 250px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 2px solid #51291e;
+  outline: none;
+  background: transparent;
+  color: #000000; /* ✅ Pure black for highest contrast */
+  font-weight: 500;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #222222; /* ✅ Deep gray – clearly visible */
+  font-weight: 400;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #8f00ff;
+}
+
+.btn-gradient {
+  align-self: center;
+  background: linear-gradient(135deg, #8f00ff, #ff3cac);
+  color: #fff;
+  padding: 0.7rem 1.8rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(135deg, #ff3cac, #8f00ff);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-container h2 {
+    font-size: 2rem;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+}
+
+/* ---------- Brand Circle Section ---------- */
+.brand-circle-section {
+  background: linear-gradient(135deg, #f6f8ff, #e8ecf5);
+  padding: 60px 20px;
+}
+
+.brand-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0b0c4e;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.brand-title::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background-color: #8f00ff;
+  display: block;
+  margin: 0.5rem auto 0;
+}
+
+.brand-circle-image-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
+}
+
+.brand-circle-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .brand-title {
+    font-size: 1.8rem;
+  }
+
+  .brand-circle-image-wrapper {
+    padding: 10px;
+  }
+}
+
+/* ---------- Final CTA Section (Light Variant) ---------- */
+.grow-together-section {
+  background: linear-gradient(135deg, #f6f8ff, #e8ecf5);
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #301014; /* deep readable text */
+}
+
+.grow-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.grow-container h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #51291e; /* warm bold heading */
+}
+
+.grow-container p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+  color: #4a4a4a;
+}
+
+.grow-btn {
+  background: #fff;
+  color: #8f00ff;
+  padding: 0.8rem 2rem;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  border: 2px solid #8f00ff;
+}
+
+.grow-btn:hover {
+  background: #8f00ff;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(143, 0, 255, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grow-container h2 {
+    font-size: 2rem;
+  }
+
+  .grow-container p {
+    font-size: 1rem;
+  }
+}

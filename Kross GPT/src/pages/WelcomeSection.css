@@ -1,0 +1,51 @@
+/* ---------- WELCOME SECTION ---------- */
+.welcome-section {
+  background: linear-gradient(
+    135deg,
+    #1e130c,
+    #9a8478
+  ); /* Elegant earthy tone */
+  padding: 5rem 1rem;
+}
+.welcome-wrapper {
+  gap: 2rem;
+}
+.welcome-images {
+  max-width: 500px;
+}
+.main-image {
+  width: 100%;
+  border: 4px solid #fff;
+  border-radius: 12px;
+}
+.overlay-image {
+  width: 180px;
+  bottom: -20px;
+  right: -20px;
+  border: 4px solid #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+.welcome-text {
+  max-width: 600px;
+}
+.welcome-text h2 {
+  color: #ffd93d;
+}
+.welcome-text p {
+  color: #eeeeee;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.about-btn {
+  background: transparent;
+  color: #ffd93d;
+  border: 2px solid #ffd93d;
+  padding: 0.6rem 1.5rem;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+.about-btn:hover {
+  background: #ffd93d;
+  color: #000;
+}
