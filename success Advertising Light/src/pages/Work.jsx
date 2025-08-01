@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import "./work.css";
+import "./Work.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import workHeroImage from "../assets/workHeroImage.png"; // ✅ Use your local image

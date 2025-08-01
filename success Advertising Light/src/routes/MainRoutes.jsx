@@ -5,7 +5,7 @@ import ContactPage from "../pages/contact";
 import Footer from "../components/Footer";
 import Services from "../pages/Services";
 import About from "../pages/About";
-import Work from "../pages/work";
+import Work from "../pages/Work";
 
 function Mainroutes() {
   return (
