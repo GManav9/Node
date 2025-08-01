@@ -126,6 +126,7 @@ const Services = () => {
               </div>
               <div className="col-12 col-lg-6 text-center image-wrapper">
                 <img
+                  rel="preload"
                   src={mainImage}
                   alt="Main Services"
                   className="img-fluid rounded shadow"
@@ -142,6 +143,7 @@ const Services = () => {
             <div className="row align-items-center">
               <div className="col-12 col-lg-6 text-center mb-4 mb-lg-0">
                 <img
+                  rel="preload"
                   src={servicesImage}
                   alt="All Services"
                   className="img-fluid rounded shadow"

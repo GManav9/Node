@@ -27,7 +27,7 @@ const Work = () => {
         </div>
 
         <div className="work-image-right">
-          <img src={workHeroImage} alt="Creative Showcase" />
+          <img src={workHeroImage} rel="preload" alt="Creative Showcase" />
         </div>
       </section>
       {/* what we do section */}
