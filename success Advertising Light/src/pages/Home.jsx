@@ -22,7 +22,7 @@ import Hoarding from "../assets/Hoarding.png";
 import Social from "../assets/Social.png";
 import Marketing360 from "../assets/Marketing360.png";
 import logo from "../assets/logo.png";
-import su from "../assets/su.png";
+import su from "../assets/Su.png";
 import women from "../assets/women.jpg";
 
 import logo1 from "../assets/client1.png";
