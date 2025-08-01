@@ -12,8 +12,8 @@ import "./Home.css";
 import "swiper/css";
 import "swiper/css/navigation";
 
-import News from "../assets/News.png";
-import radio1 from "../assets/radio1.png";
+import News from "../assets/News.jpg";
+import radio1 from "../assets/radio1.jpg";
 
 import Televisions from "../assets/Televisions.png";
 import Events from "../assets/Events.png";
@@ -23,7 +23,6 @@ import Social from "../assets/Social.png";
 import Marketing360 from "../assets/Marketing360.png";
 import logo from "../assets/logo.png";
 import su from "../assets/Su.png";
-import women from "../assets/women.jpg";
 
 import logo1 from "../assets/client1.png";
 import logo2 from "../assets/client2.png";
@@ -166,6 +165,7 @@ function Home() {
             <div className="hero-text-content">
               <div className="center-logo">
                 <img
+                  rel="preload"
                   src={logo}
                   alt="Success Brand Solutions"
                   style={{

@@ -10,7 +10,7 @@ import {
   FaClock,
 } from "react-icons/fa";
 
-import contactBg from "../assets/contactBg.png";
+import contactBg from "../assets/contactBg.jpg";
 
 function Contact() {
   useEffect(() => {
@@ -40,7 +40,7 @@ function Contact() {
         <div className="container px-3 px-md-4 py-5">
           <div className="row gx-4 gy-5">
             {/* Left - Info */}
-            <div className="col-md-6 d-flex flex-column justify-content-between">
+            <div className="col-12 col-sm-12 col-lg-6 d-flex flex-column justify-content-between">
               <div>
                 <h2 className="fw-bold mb-3 text-primary">
                   Start the Conversation
@@ -101,7 +101,7 @@ function Contact() {
             </div>
 
             {/* Right - Form */}
-            <div className="col-md-6 d-flex align-items-center">
+            <div className="col-12 col-sm-12 col-lg-6 d-flex align-items-center">
               <div className="bg-white shadow rounded p-4 p-md-5 w-100">
                 <h4 className="fw-bold mb-3">Send Us a Message</h4>
                 <p className="text-muted mb-4">

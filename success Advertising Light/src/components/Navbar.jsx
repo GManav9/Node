@@ -67,6 +67,7 @@ const Navbar = () => {
       <div className="container">
         <Link className="navbar-brand" to="/">
           <img
+            rel="preload"
             src={logo}
             alt="Success Brand Solutions"
             className="logo-image"

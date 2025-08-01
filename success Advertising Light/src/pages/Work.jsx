@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./Work.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import workHeroImage from "../assets/workHeroImage.png"; // ✅ Use your local image
+import workHeroImage from "../assets/workHeroImage.jpg"; // ✅ Use your local image
 import { Lightbulb, Brush, Camera } from "lucide-react";
 import { FaHandshake, FaRocket, FaRegLightbulb } from "react-icons/fa";
 

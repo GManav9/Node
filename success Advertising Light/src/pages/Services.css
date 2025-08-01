@@ -323,6 +323,29 @@
   height: auto;
 }
 
+@media (min-width: 992px) {
+  .price-box-container {
+    height: 480px; /* Match with image */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  .price-card {
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  .price-card::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .price-card::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+  }
+}
+
 /* --- Auto Rickshaw Advertising Section --- */
 .auto-rickshaw-section {
   background: linear-gradient(135deg, #fdfbfb, #ebedee);

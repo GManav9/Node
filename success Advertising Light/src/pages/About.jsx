@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "./Home.css";
 import "./About.css"; // ✅ required!
-import aboutImg from "../assets/aboutImg.png";
+import aboutImg from "../assets/aboutImg.jpg";
 import { FaBullseye, FaLightbulb, FaHandshake } from "react-icons/fa"; // at the top of About.jsx
 
 function About() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Navbar />

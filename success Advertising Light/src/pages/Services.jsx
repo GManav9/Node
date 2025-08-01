@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Services.css";
-import mainImage from "../assets/Main.png";
-import servicesImage from "../assets/AllServices.png";
-import flexBanner from "../assets/Hoarding1.jpg";
+import mainImage from "../assets/Main.jpg";
+import servicesImage from "../assets/AllServices.jpg";
+import flexBanner from "../assets/Untitled-1.jpg";
 import AutoRicksaw from "../assets/AutoRicksaw2.jpg";
 
 import ho from "../assets/ho.jpg";
