@@ -15,7 +15,7 @@ function About() {
       <section
         className="position-relative d-flex align-items-center justify-content-center text-white text-center"
         style={{
-          height: "60vh",
+          height: "90vh",
           backgroundImage: `url(${aboutImg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -47,7 +47,7 @@ function About() {
         className="welcome-section d-flex align-items-center"
         style={{
           minHeight: "70vh",
-          background: "linear-gradient(135deg, #f5f9ff, #eaf0f8)",
+          background: "",
           padding: "80px 0",
         }}
       >

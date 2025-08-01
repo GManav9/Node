@@ -93,51 +93,11 @@ const Navbar = () => {
               </Link>
             </li>
 
-            <li
-              className={`nav-item dropdown custom-dropdown ${
-                isMobileDropdownOpen ? "show" : ""
-              }`}
-              onClick={toggleMobileDropdown}
-            >
-              <span className="nav-link nav-text dropdown-toggle" role="button">
+            <li className="nav-item">
+              <Link className="nav-link nav-text" to="/services">
                 Services
-              </span>
-              <ul
-                className={`dropdown-menu custom-dropdown-menu ${
-                  isMobileDropdownOpen ? "show" : ""
-                }`}
-              >
-                <li>
-                  <Link className="dropdown-item" to="/services">
-                    Digital Marketing
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className="dropdown-item"
-                    to="/services/web-development"
-                  >
-                    Web Development
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/services/branding">
-                    Branding
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/services/events">
-                    Events & Activations
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/services/exhibitions">
-                    Exhibitions
-                  </Link>
-                </li>
-              </ul>
+              </Link>
             </li>
-
             <li className="nav-item">
               <Link className="nav-link nav-text" to="/work">
                 Work

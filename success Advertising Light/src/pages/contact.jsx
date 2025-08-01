@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "./Home.css";
@@ -12,6 +13,10 @@ import {
 import contactBg from "../assets/contactBg.png";
 
 function Contact() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Navbar />

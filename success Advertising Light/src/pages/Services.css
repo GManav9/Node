@@ -1,74 +1,1036 @@
-/* ---------- SERVICES SECTION ---------- */
-
-.services-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 4rem 1rem;
+/* --- HERO SECTION --- */
+.services-hero {
+  padding: 5rem 1rem;
+  background: linear-gradient(135deg, #f3f4f6, #e6ebe9);
 }
 
-.service-section {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 4rem;
-  gap: 2rem;
+.services-hero .text-content h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #2b2d42;
+  background: linear-gradient(to right, #4b6cb7, #182848);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.service-section.reverse {
-  flex-direction: row-reverse;
-}
-
-.service-image {
-  flex: 1 1 40%;
+.services-hero .text-content p {
+  font-size: 1.1rem;
+  color: #4a4f63;
+  margin-top: 1.2rem;
   max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.service-image img {
-  width: 100%;
+@media (min-width: 992px) {
+  .services-hero .text-content {
+    max-width: 50%;
+    margin: 0;
+  }
+
+  .services-hero .text-content h1 {
+    font-size: 3rem;
+  }
+
+  .services-hero .text-content p {
+    margin: 1.2rem 0 0;
+  }
+}
+
+.services-hero .image-wrapper img {
+  max-width: 100%;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-height: 400px;
+  object-fit: contain;
 }
 
-.service-content {
-  flex: 1 1 55%;
+/* --- WHAT WE OFFER SECTION --- */
+.highlight-section {
+  background: linear-gradient(135deg, #f8f9fa, #e3e6e8);
+  padding: 5rem 1rem;
+  position: relative;
+  overflow: hidden;
 }
 
-.service-content h3 {
-  font-size: 1.8rem;
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #2c3e50;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  margin: 0.75rem auto 0;
+  background: linear-gradient(to right, #7f7fd5, #86a8e7);
+  border-radius: 5px;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 2rem 1.2rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+  border: 2px solid transparent;
+  height: 100%;
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border: 2px solid rgba(120, 144, 180, 0.4);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(133, 133, 173, 0.1),
+    transparent 70%
+  );
+  transform: rotate(25deg);
+  z-index: 0;
+}
+
+.service-card .icon-wrapper {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(145deg, #6dd5ed, #2193b0);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+.service-card .icon-wrapper svg {
+  color: #fff;
+  width: 28px;
+  height: 28px;
+}
+
+.service-card h5 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 1rem;
   color: #333;
-  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
 }
 
-.service-content p {
-  font-size: 1.05rem;
+.service-card p {
+  font-size: 0.95rem;
   color: #555;
-  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+  margin-top: 0.5rem;
 }
 
-/* ---------- RESPONSIVE DESIGN ---------- */
+/* --- FLEX BANNER SECTION --- */
+.flex-banner-section {
+  background: linear-gradient(135deg, #f2f2f2, #e0f7f4);
+  padding: 4rem 1rem;
+  position: relative;
+}
 
+.flex-banner-section .section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 3rem;
+}
+
+.flex-image {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease;
+}
+
+.flex-image:hover {
+  transform: scale(1.02);
+}
+
+/* --- Show Prices Button --- */
+.gradient-btn {
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+  border: none;
+  padding: 0.9rem 2.2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(67, 206, 162, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.gradient-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -70%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: skewX(-25deg);
+  transition: left 0.75s ease-in-out;
+}
+
+.gradient-btn:hover::after {
+  left: 130%;
+}
+
+.gradient-btn:hover {
+  box-shadow: 0 12px 30px rgba(67, 206, 162, 0.6);
+  transform: translateY(-2px);
+}
+
+/* --- Pricing Box --- */
+.price-box-container {
+  margin-top: 1rem;
+  position: relative;
+}
+
+.animate-slide-in {
+  animation: slideUp 0.5s ease forwards;
+}
+
+.price-card {
+  background: linear-gradient(145deg, #ffffff, #eef1f4);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  z-index: 10;
+  transition: all 0.4s ease;
+}
+
+/* --- Close Icon --- */
+.close-icon {
+  background: #d9534f;
+  color: #fff;
+  border: none;
+  font-size: 1.4rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  z-index: 100;
+  animation: bounceIn 0.5s ease-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+.close-icon:hover {
+  background: #c9302c;
+}
+
+/* --- Table Hover Rows --- */
+.price-card .table tbody tr:hover {
+  background-color: rgba(240, 240, 240, 0.6);
+  transition: background 0.2s ease;
+}
+
+/* --- Animations --- */
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* --- Responsive --- */
 @media (max-width: 768px) {
-  .service-section {
-    flex-direction: column;
+  .flex-image {
+    height: 300px;
+  }
+
+  .price-card {
+    padding: 1.5rem;
     text-align: center;
   }
 
-  .service-section.reverse {
-    flex-direction: column;
+  .close-icon {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .flex-image {
+    height: 250px;
   }
 
-  .service-image,
-  .service-content {
-    flex: 1 1 100%;
-  }
-
-  .service-content h3 {
-    font-size: 1.5rem;
-  }
-
-  .service-content p {
+  .gradient-btn {
     font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+/* --- Fix image require usage in JSX --- */
+.flex-image {
+  object-fit: cover;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- Auto Rickshaw Advertising Section --- */
+.auto-rickshaw-section {
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  padding: 60px 0;
+}
+
+.auto-rickshaw-title {
+  color: #2b2d42;
+  font-weight: 800;
+  font-size: 2.5rem;
+}
+
+.auto-rickshaw-content {
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.auto-rickshaw-content p {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.auto-rickshaw-btn {
+  align-self: flex-start;
+  background: linear-gradient(135deg, #ff6600, #ff8800);
+  border: none;
+  padding: 0.9rem 2.2rem;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(255, 102, 0, 0.5);
+  transition: background 0.3s ease;
+}
+
+.auto-rickshaw-btn:hover {
+  background: linear-gradient(135deg, #e65c00, #ff7300);
+}
+
+/* === ATTRACTIVE PRICE BOX === */
+.auto-rickshaw-price-box {
+  background: #1c1c1c;
+  padding: 2.5rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+}
+
+.auto-rickshaw-price-box h4 {
+  color: #ffcc00;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.8rem;
+}
+
+.rickshaw-price-details {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.rickshaw-price-details h5 {
+  color: #ff6600;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.rickshaw-price-details ul {
+  padding-left: 1.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.rickshaw-price-details li {
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.rickshaw-price-details li::before {
+  content: "•";
+  position: absolute;
+  left: -1rem;
+  color: #ffcc00;
+  font-size: 1.3rem;
+  top: 0.1rem;
+}
+
+.rickshaw-price-details small {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* Close Button */
+.close-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+.close-icon:hover {
+  background: #d9363e;
+}
+
+/* Rickshaw Image */
+.auto-rickshaw-image {
+  max-height: 480px;
+  object-fit: cover;
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  width: 100%;
+}
+
+.auto-rickshaw-image:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .auto-rickshaw-title {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .auto-rickshaw-content {
+    padding: 1.5rem 1.8rem;
+  }
+
+  .auto-rickshaw-btn {
+    margin: 0 auto;
+    display: block;
+  }
+
+  .auto-rickshaw-image {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .auto-rickshaw-image {
+    max-height: 300px;
+  }
+}
+
+/*  */
+/* --- Real Flex Banner Examples Section --- */
+.flex-example-section {
+  background: linear-gradient(135deg, #f2f2f2, #e0f7f4);
+  padding: 4rem 1rem;
+  position: relative;
+}
+
+.flex-example-section .section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 3rem;
+}
+
+/* Image styling (reuse same class) */
+.flex-image1 {
+  width: 100%;
+  height: 580px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease;
+}
+
+.flex-image1:hover {
+  transform: scale(1.02);
+}
+
+/* Show Prices Button (reused) */
+.gradient-btn {
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+  border: none;
+  padding: 0.9rem 2.2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(67, 206, 162, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.gradient-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -70%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: skewX(-25deg);
+  transition: left 0.75s ease-in-out;
+}
+
+.gradient-btn:hover::after {
+  left: 130%;
+}
+
+.gradient-btn:hover {
+  box-shadow: 0 12px 30px rgba(67, 206, 162, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Price Box */
+.price-box-container {
+  margin-top: 1rem;
+  position: relative;
+}
+
+.animate-slide-in {
+  animation: slideUp 0.5s ease forwards;
+}
+
+.price-card {
+  background: linear-gradient(145deg, #ffffff, #eef1f4);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  z-index: 10;
+  transition: all 0.4s ease;
+}
+
+/* Close Icon */
+.close-icon {
+  background: #d9534f;
+  color: #fff;
+  border: none;
+  font-size: 1.4rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  z-index: 100;
+  animation: bounceIn 0.5s ease-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+.close-icon:hover {
+  background: #c9302c;
+}
+
+/* Table hover effect */
+.price-card .table tbody tr:hover {
+  background-color: rgba(240, 240, 240, 0.6);
+  transition: background 0.2s ease;
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .flex-image {
+    height: 300px;
+  }
+
+  .price-card {
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .close-icon {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .flex-image1 {
+    height: 250px;
+  }
+
+  .gradient-btn {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .flex-example-section .section-title {
+    font-size: 2rem;
+  }
+}
+
+/* --- ACP BOARD SECTION --- */
+.acp-board-section {
+  background: linear-gradient(
+    135deg,
+    #fdfdfd,
+    #f2f2f2
+  ); /* ✅ Light gradient background */
+  padding: 60px 0;
+}
+
+.acp-board-image {
+  max-height: 480px;
+  object-fit: contain;
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.acp-board-image:hover {
+  transform: scale(1.02);
+}
+
+.acp-board-content-box,
+.acp-board-price-box {
+  background: transparent;
+  padding: 2rem 2.5rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 480px; /* ✅ Matches image height */
+  overflow-y: auto; /* ✅ Scroll if overflow */
+}
+
+.acp-board-price-box {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.acp-board-price-box h4 {
+  color: #ff6600;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.price-type-card h5 {
+  color: #ff6600;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.price-type-card ul {
+  padding-left: 1.4rem;
+}
+
+.price-type-card li {
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.price-type-card li::before {
+  content: "•";
+  position: absolute;
+  left: -1rem;
+  color: #ff6600;
+  font-size: 1.3rem;
+  top: 0.1rem;
+}
+
+.close-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+.close-icon:hover {
+  background: #d9363e;
+}
+
+/* ✅ Responsive Adjustments */
+@media (max-width: 768px) {
+  .acp-board-image {
+    max-height: 300px;
+  }
+
+  .acp-board-content-box,
+  .acp-board-price-box {
+    height: auto; /* 🔁 Allow natural flow on small screens */
+    padding: 1.5rem 1.8rem;
+  }
+
+  .gradient-btn {
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+/* hoarding section */
+/* --- HOARDING SECTION --- */
+.hoarding-section {
+  background: linear-gradient(135deg, #f2f2f2, #e0f7f4);
+  padding: 4rem 1rem;
+  position: relative;
+}
+
+.hoarding-section .section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 3rem;
+}
+
+/* Responsive Full Image Display */
+.hoarding-image1 {
+  width: 100%;
+  height: auto;
+  max-height: 580px;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease;
+}
+
+.hoarding-image1:hover {
+  transform: scale(1.02);
+}
+
+.hoarding-content-box {
+  padding: 2rem;
+  border-radius: 20px;
+  transition: all 0.4s ease;
+}
+
+.hoarding-price-box-container {
+  margin-top: 1rem;
+  position: relative;
+
+  /* ✅ Add height to match image */
+  max-height: 580px;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ✅ Scrollable inside box */
+.price-card {
+  background: linear-gradient(145deg, #ffffff, #eef1f4);
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  z-index: 10;
+  transition: all 0.4s ease;
+
+  /* ✅ Allow scrolling if content exceeds */
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* ✅ Optional: scrollbar style */
+.price-card::-webkit-scrollbar {
+  width: 6px;
+}
+.price-card::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 3px;
+}
+
+.animate-slide-in {
+  animation: slideUp 0.5s ease forwards;
+}
+
+.gradient-btn {
+  background: linear-gradient(135deg, #ff9966, #ff5e62);
+  border: none;
+  padding: 0.9rem 2.2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  color: #fff;
+  box-shadow: 0 8px 25px rgba(255, 94, 98, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.gradient-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -70%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: skewX(-25deg);
+  transition: left 0.75s ease-in-out;
+}
+
+.gradient-btn:hover::after {
+  left: 130%;
+}
+
+.gradient-btn:hover {
+  box-shadow: 0 12px 30px rgba(255, 94, 98, 0.6);
+  transform: translateY(-2px);
+}
+
+.close-icon {
+  background: #d9534f;
+  color: #fff;
+  border: none;
+  font-size: 1.4rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  z-index: 100;
+  animation: bounceIn 0.5s ease-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
+}
+
+.close-icon:hover {
+  background: #c9302c;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hoarding-image1 {
+    max-height: 360px;
+  }
+
+  .hoarding-price-box-container {
+    max-height: 360px;
+  }
+
+  .price-card {
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .close-icon {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hoarding-image1 {
+    max-height: 250px;
+  }
+
+  .hoarding-price-box-container {
+    max-height: 250px;
+  }
+
+  .gradient-btn {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .hoarding-section .section-title {
+    font-size: 2rem;
+  }
+}
+
+/* --- PAMPHLET DISTRIBUTION SECTION --- */
+.pamphlet-section {
+  background: linear-gradient(135deg, #fcfcfc, #f1f1f1);
+  padding: 60px 0;
+}
+
+.pamphlet-image {
+  max-height: 480px;
+  object-fit: contain;
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.pamphlet-image:hover {
+  transform: scale(1.02);
+}
+
+.pamphlet-content-box,
+.pamphlet-price-box {
+  background: transparent;
+  padding: 2rem 2.5rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 480px;
+  overflow-y: auto;
+}
+
+.pamphlet-price-box {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.pamphlet-price-box h4 {
+  color: #ff6600;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.pamphlet-price-box .btn-group {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+.pamphlet-price-box .btn.active {
+  background: linear-gradient(135deg, #ff6600, #ff9900);
+  color: #fff;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .pamphlet-image {
+    max-height: 300px;
+  }
+
+  .pamphlet-content-box,
+  .pamphlet-price-box {
+    height: auto;
+    padding: 1.5rem 1.8rem;
+  }
+
+  .gradient-btn {
+    margin: 0 auto;
+    display: block;
   }
 }

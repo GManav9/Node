@@ -9,13 +9,20 @@ import "swiper/css/navigation";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Home.css";
 
-import newspaperimage from "../assets/newspaper2.png";
+import "swiper/css";
+import "swiper/css/navigation";
+
+import News from "../assets/News.png";
 import radio1 from "../assets/radio1.png";
-import television from "../assets/television.png";
+
+import Televisions from "../assets/Televisions.png";
+import Events from "../assets/Events.png";
 import cinema from "../assets/cinema.png";
-import outofhome from "../assets/outofhome.png";
+import Hoarding from "../assets/Hoarding.png";
+import Social from "../assets/Social.png";
+import Marketing360 from "../assets/Marketing360.png";
 import logo from "../assets/logo.png";
-import men from "../assets/men.jpg";
+import su from "../assets/su.png";
 import women from "../assets/women.jpg";
 
 import logo1 from "../assets/client1.png";
@@ -23,13 +30,28 @@ import logo2 from "../assets/client2.png";
 import logo3 from "../assets/client3.png";
 import logo4 from "../assets/client4.png";
 import logo5 from "../assets/client5.png";
-import logo6 from "../assets/client6.jpg";
+import logo6 from "../assets/client6.png";
+import logo7 from "../assets/client7.png";
+import logo8 from "../assets/client8.png";
+import logo9 from "../assets/client9.png";
+import logo10 from "../assets/client10.png";
+import logo11 from "../assets/client11.png";
+import logo12 from "../assets/client12.png";
+import logo13 from "../assets/client13.png";
+import logo14 from "../assets/client14.png";
+import logo15 from "../assets/client15.png";
+import logo16 from "../assets/client16.png";
+import logo17 from "../assets/client17.png";
+import logo18 from "../assets/client18.png";
+import logo19 from "../assets/client19.png";
+import logo20 from "../assets/client20.png";
+
 import Footer from "../components/Footer";
 
 const services = [
   {
     title: "Newspaper Advertising",
-    image: newspaperimage,
+    image: News,
     description:
       "Target specific demographics through leading newspaper publications.",
   },
@@ -41,7 +63,7 @@ const services = [
   },
   {
     title: "Television Advertising",
-    image: television,
+    image: Televisions,
     description:
       "Show and tell a wide audience about your products or services via TV.",
   },
@@ -53,28 +75,25 @@ const services = [
   },
   {
     title: "Out Of Home",
-    image: outofhome,
+    image: Hoarding,
     description:
       "Promote your brand through strategic outdoor advertising campaigns.",
   },
   {
     title: "Event Management & Road Shows",
-    image:
-      "https://images.unsplash.com/photo-1581090700227-1e8e8d6d7b8f?auto=compress&cs=tinysrgb&w=800",
+    image: Events,
     description:
       "Plan and execute engaging events and road shows that leave a lasting impression.",
   },
   {
     title: "Social Media Marketing",
-    image:
-      "https://images.unsplash.com/photo-1581090700227-1e8e8d6d7b8f?auto=compress&cs=tinysrgb&w=800",
+    image: Social,
     description:
       "Build your brand's reputation through effective social media strategies.",
   },
   {
     title: "Integrated 360 Marketing",
-    image:
-      "https://images.unsplash.com/photo-1581090700227-1e8e8d6d7b8f?auto=compress&cs=tinysrgb&w=800",
+    image: Marketing360,
     description:
       "Implement comprehensive marketing solutions across all platforms.",
   },
@@ -101,6 +120,10 @@ const reviews = [
 ];
 
 function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Add these lines at the top inside Home function
   const clientPrevRef = useRef(null);
   const clientNextRef = useRef(null);
@@ -239,64 +262,54 @@ function Home() {
       </section>
 
       <section className="welcome-section py-5">
-        <div className="container d-flex flex-column flex-md-row align-items-center justify-content-between">
-          {/* Left Side Images */}
-          <div className="image-stack position-relative mb-4 mb-md-0">
-            <img
-              src={men}
-              alt="Creative Team Collaboration"
-              className="img-fluid rounded main-img"
-            />
-            <img
-              src={women}
-              alt="Modern Advertising Agency Workspace"
-              className="img-fluid rounded overlay-img"
-            />
-          </div>
+        <div className="container">
+          <div className="row align-items-center">
+            {/* Left Side Image */}
+            <div className="col-12 col-md-6 mb-4 mb-md-0">
+              <div className="image-stack">
+                <img
+                  src={su}
+                  alt="Creative Workspace"
+                  className="img-fluid rounded main-img"
+                />
+              </div>
+            </div>
 
-          {/* Right Side Text */}
-          <div className="ms-md-5 text-section">
-            <h2 className="fw-bold">Welcome To Success Brand Solutions</h2>
+            {/* Right Side Text */}
+            <div className="col-12 col-md-6 text-section ps-md-4">
+              <h2 className="fw-bold">Welcome To Success Brand Solutions</h2>
+              <p className="mt-3">
+                We are a brand creativity agency that strives to provide your
+                company with a wide range of creative ideas to help your company
+                grow and flourish in today’s competitive market.
+              </p>
+              <p>
+                Whether you're a startup or an established enterprise, we bring
+                a strategic and thoughtful approach to your brand’s
+                communication.
+              </p>
+              <p>
+                From logo design and brand identity to advertising campaigns and
+                digital content, we turn creative thinking into tangible
+                results.
+              </p>
+              <p>
+                Our team works collaboratively to understand your vision and
+                translate it into meaningful, measurable outcomes.
+              </p>
+              <p>
+                Since 1985, we’ve proudly supported businesses through unmatched
+                creativity across traditional and digital platforms.
+              </p>
+              <p>
+                Let Success Brand Solutions be the partner that propels your
+                brand to new heights. Together, we’ll turn ideas into impact.
+              </p>
 
-            <p className="mt-3">
-              We are a brand creativity agency that strives to provide your
-              company with a wide range of creative ideas to help your company
-              grow and flourish in today’s competitive market.
-            </p>
-            <p>
-              Whether you're a startup or an established enterprise, we bring a
-              strategic and thoughtful approach to your brand’s communication.
-              Every concept is crafted with precision and backed by industry
-              insights, ensuring relevance and maximum impact.
-            </p>
-            <p>
-              At Success Brand Solutions, we believe branding is more than just
-              visuals—it's about telling compelling stories that connect with
-              your audience on a deeper level. From logo design and brand
-              identity to advertising campaigns and digital content, we turn
-              creative thinking into tangible results.
-            </p>
-            <p>
-              Our team of seasoned designers, strategists, and marketers work
-              collaboratively to understand your vision and translate it into
-              meaningful, measurable outcomes. We align your brand voice with
-              the latest trends while staying true to your core values.
-            </p>
-            <p>
-              Since 1985, we’ve proudly supported countless businesses in
-              building their presence through personalized service and unmatched
-              creativity. Our expertise spans traditional and digital mediums,
-              ensuring your message is heard loud and clear across every
-              platform.
-            </p>
-            <p>
-              Let Success Brand Solutions be the partner that propels your brand
-              to new heights. Together, we’ll turn ideas into impact.
-            </p>
-
-            <a href="#about" className="btn btn-maroon mt-3 px-4 py-2">
-              ABOUT US
-            </a>
+              <a href="#about" className="btn btn-maroon mt-3 px-4 py-2">
+                ABOUT US
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -405,53 +418,88 @@ function Home() {
         </div>
       </section>
 
-      <section className="client-slider-section">
-        <div className="container text-center">
-          <h2 className="client-heading">Our Trusted Clients</h2>
-          <div className="swiper-container-wrapper">
-            <Swiper
-              modules={[Navigation, Autoplay]}
-              navigation={{
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-              }}
-              autoplay={{ delay: 2500, disableOnInteraction: false }}
-              loop={true}
-              breakpoints={{
-                320: { slidesPerView: 2, spaceBetween: 20 },
-                768: { slidesPerView: 4, spaceBetween: 30 },
-                1024: { slidesPerView: 6, spaceBetween: 40 },
-              }}
-            >
-              {[
-                logo1,
-                logo2,
-                logo3,
-                logo4,
-                logo6,
-                logo1,
-                logo2,
-                logo3,
-                logo4,
-                logo6,
-              ].map((logo, idx) => (
-                <SwiperSlide key={idx}>
-                  <div className="logo-wrapper">
-                    <img
-                      src={logo}
-                      alt={`client-${idx + 1}`}
-                      className="client-logo"
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
-
-              <div className="swiper-button-prev d-none d-md-flex" />
-              <div className="swiper-button-next d-none d-md-flex" />
-            </Swiper>
-          </div>
+      {/* --- CLIENT LOGO SLIDER --- */}
+      <section className="client-logo-section">
+        <h2 className="section-title">Trusted by Our Clients</h2>
+        <div className="container">
+          <Swiper
+            className="client-logo-swiper"
+            spaceBetween={30}
+            slidesPerView={4}
+            loop={true}
+            navigation={true}
+            autoplay={{ delay: 2000 }}
+            breakpoints={{
+              320: { slidesPerView: 2, spaceBetween: 20 },
+              576: { slidesPerView: 3, spaceBetween: 20 },
+              768: { slidesPerView: 4, spaceBetween: 30 },
+              992: { slidesPerView: 5, spaceBetween: 30 },
+            }}
+          >
+            <SwiperSlide className="client-logo-slide">
+              <img src={logo1} alt="Client 1" />
+            </SwiperSlide>
+            <SwiperSlide className="client-logo-slide">
+              <img src={logo2} alt="Client 2" />
+            </SwiperSlide>
+            <SwiperSlide className="client-logo-slide">
+              <img src={logo3} alt="Client 3" />
+            </SwiperSlide>
+            <SwiperSlide className="client-logo-slide">
+              <img src={logo4} alt="Client 4" />
+            </SwiperSlide>
+            <SwiperSlide className="client-logo-slide">
+              <img src={logo5} alt="Client 5" />
+            </SwiperSlide>
+            <SwiperSlide className="client-logo-slide">
+              <img src={logo6} alt="Client 6" />
+            </SwiperSlide>
+            <SwiperSlide className="client-logo-slide">
+              <img src={logo7} alt="Client 7" />
+            </SwiperSlide>
+            <SwiperSlide className="client-logo-slide">
+              <img src={logo8} alt="Client 8" />
+            </SwiperSlide>
+            <SwiperSlide className="client-logo-slide">
+              <img src={logo9} alt="Client 9" />
+            </SwiperSlide>
+            <SwiperSlide className="client-logo-slide">
+              <img src={logo10} alt="Client 10" />
+            </SwiperSlide>
+            <SwiperSlide className="client-logo-slide">
+              <img src={logo11} alt="Client 11" />
+            </SwiperSlide>
+            <SwiperSlide className="client-logo-slide">
+              <img src={logo12} alt="Client 12" />
+            </SwiperSlide>
+            <SwiperSlide className="client-logo-slide">
+              <img src={logo13} alt="Client 13" />
+            </SwiperSlide>
+            <SwiperSlide className="client-logo-slide">
+              <img src={logo14} alt="Client 14" />
+            </SwiperSlide>
+            <SwiperSlide className="client-logo-slide">
+              <img src={logo15} alt="Client 15" />
+            </SwiperSlide>
+            <SwiperSlide className="client-logo-slide">
+              <img src={logo16} alt="Client 16" />
+            </SwiperSlide>
+            <SwiperSlide className="client-logo-slide">
+              <img src={logo17} alt="Client 17" />
+            </SwiperSlide>
+            <SwiperSlide className="client-logo-slide">
+              <img src={logo18} alt="Client 18" />
+            </SwiperSlide>
+            <SwiperSlide className="client-logo-slide">
+              <img src={logo19} alt="Client 19" />
+            </SwiperSlide>
+            <SwiperSlide className="client-logo-slide">
+              <img src={logo20} alt="Client 20" />
+            </SwiperSlide>
+          </Swiper>
         </div>
       </section>
+
       <Footer></Footer>
     </>
   );

@@ -14,7 +14,6 @@
   color: #fff;
   margin-top: 20px;
   margin-bottom: 20px;
-
 }
 
 .work-content-left h1 {
@@ -54,7 +53,6 @@
   align-items: center;
   margin-top: 20px;
   margin-bottom: 20px;
-
 }
 
 .work-image-right img {
@@ -65,82 +63,174 @@
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
 }
 /* what we do section  */
-
-/* Base Section Styling */
-.work-what-we-do {
-  background-color: #1f2d3d; /* dark blue like your website background */
-  color: #ffffff;
-  padding: 80px 5%;
+/* ---------- WHAT WE DO SECTION (PASTEL GRADIENT VERSION) ---------- */
+.what-we-do-section {
+  background: linear-gradient(to bottom, #f0f4ff, #ffe9ec);
+  color: #1a1a1a;
+  padding: 4rem 2rem;
   text-align: center;
 }
 
-.work-what-we-do h2 {
+.what-we-do-header h2 {
   font-size: 2.5rem;
-  margin-bottom: 16px;
-  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: #222;
 }
 
-.work-what-we-do > p {
+.what-we-do-header p {
   font-size: 1.1rem;
-  color: #d0d0d0;
-  margin-bottom: 48px;
-  max-width: 720px;
+  color: #555;
+  margin-bottom: 3rem;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* Service Cards Layout */
-.service-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 32px;
-}
-
-/* Individual Card */
-.service-card {
-  background-color: #2e3d55;
-  padding: 24px 20px;
-  border-radius: 16px;
-  width: 100%;
-  max-width: 300px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
+/* Custom card styling with Bootstrap column layout */
+.custom-card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  height: 100%;
+  text-align: center;
 }
 
-.service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 32px rgba(255, 75, 75, 0.3); /* red glow on hover */
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
-/* Card Content */
-.service-card img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  margin-bottom: 16px;
+.custom-card h3 {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  color: #222;
 }
 
-.service-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 12px;
+.custom-card p {
+  color: #666;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* ---------- WHY WORK WITH US SECTION (DARK GRADIENT VERSION) ---------- */
+.why-work-section {
+  background: linear-gradient(to right, #6e8efb, #a777e3);
+  padding: 4rem 1rem;
+  text-align: center;
+  color: white;
+}
+
+.why-work-section h2 {
+  font-size: 2.4rem;
   font-weight: 700;
-  color: #ffffff;
+  margin-bottom: 1rem;
 }
 
-.service-card p {
-  font-size: 0.95rem;
-  color: #cccccc;
+.why-work-section p {
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  font-size: 1.1rem;
+  color: #e2e8f0;
+}
+
+/* Custom card for why section */
+.custom-why-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  color: white;
+}
+
+.custom-why-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.custom-why-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.custom-why-card p {
+  font-size: 1rem;
+  color: #f1f1f1;
+  margin-bottom: 10px;
+}
+
+/* Icon styles for both sections */
+.why-icon {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-top: 10px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.custom-why-card:hover .why-icon {
+  transform: rotate(10deg) scale(1.1);
+}
+/* ---------- CTA LET'S COLLABORATE SECTION (Light Gradient) ---------- */
+.cta-collab-section {
+  background: linear-gradient(
+    to right,
+    #f1f9ff,
+    #e0f7fa
+  ); /* soft sky blue to aqua */
+  color: #1c1f2b;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.cta-collab-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1c1f2b;
+}
+
+.cta-collab-section p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333;
+}
+
+.cta-btn {
+  background-color: #1c1f2b;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #333;
+  transform: scale(1.05);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .service-cards {
-    gap: 24px;
+    flex-direction: column;
+    align-items: center;
   }
 
   .service-card {
-    max-width: 90%;
+    width: 90%;
+    max-width: 350px;
   }
 }
 
@@ -169,7 +259,6 @@
     font-size: 0.9rem;
   }
 }
-
 
 /* what we do section  */
 
