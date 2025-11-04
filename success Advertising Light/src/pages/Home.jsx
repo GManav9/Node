@@ -118,6 +118,17 @@ const reviews = [
   },
 ];
 
+
+import slide1 from "../assets/banner2.jpeg";
+import slide2 from "../assets/banner2.jpeg";
+import slide3 from "../assets/banner2.jpeg";
+import slide4 from "../assets/banner2.jpeg";
+import slide5 from "../assets/banner2.jpeg";
+
+const topBannerImages = [slide1, slide2, slide3, slide4, slide5];
+
+
+
 function Home() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -156,44 +167,31 @@ function Home() {
   return (
     <>
       <Navbar />
-      <section className="hero-section">
-        <div className="container">
-          <div className="hero-content">
-            {/* Wavy background */}
-            <div className="wavy-bg"></div>
 
-            <div className="hero-text-content">
-              <div className="center-logo">
-                <img
-                  rel="preload"
-                  src={logo}
-                  alt="Success Brand Solutions"
-                  style={{
-                    width: "240px",
-                    marginBottom: "1.5rem",
-                    filter:
-                      "drop-shadow(0 0 6px rgba(255,255,255,0.4)) drop-shadow(0 0 4px rgba(227,6,19,0.25))",
-                    transition: "filter 0.4s ease-in-out",
-                  }}
-                />
-              </div>
-              <h1 className="display-5 fw-bold">
-                Empowering Brands with Bold Solutions
-              </h1>
-              <p className="lead mt-3">
-                At <strong>Success Brand Solutions</strong>, we specialize in
-                creating impactful branding, advertising, and marketing
-                strategies. From digital content to event activations, MICE to
-                corporate gifting, we build compelling brand journeys that
-                resonate and perform.
-              </p>
-              <a href="#services" className="btn btn-lg mt-4 px-5 py-3">
-                Explore Our Services
-              </a>
-            </div>
-          </div>
-        </div>
+      {/* ===== Top Banner Slider ===== */}
+      <section className="top-banner-slider">
+        <Swiper
+          modules={[Navigation, Autoplay]}
+          spaceBetween={0}
+          slidesPerView={1}
+          loop={true}
+          autoplay={{ delay: 4000, disableOnInteraction: false }}
+          navigation
+          speed={1500}
+        >
+          {topBannerImages.map((img, index) => (
+            <SwiperSlide key={index}>
+              <img
+                src={img}
+                alt={`Slide ${index + 1}`}
+                className="img-fluid top-banner-img"
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </section>
+
+      
 
       {/* Services Section */}
       <section id="services" className="services-section py-5">

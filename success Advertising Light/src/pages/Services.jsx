@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Services.css";
 import mainImage from "../assets/Main.jpg";
 import servicesImage from "../assets/AllServices.jpg";
-import flexBanner from "../assets/Untitled-1.jpg";
+import flexBanner from "../assets/flex.png";
 import AutoRicksaw from "../assets/AutoRicksaw2.jpg";
 
 import ho from "../assets/ho.jpg";
