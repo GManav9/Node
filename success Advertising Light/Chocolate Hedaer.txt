@@ -1,7 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+
 import logo from "../assets/logo.png";
+import logo1 from "../assets/logowhite.png";
+
 import Collapse from "bootstrap/js/dist/collapse";
 
 const Navbar = () => {
@@ -68,12 +73,11 @@ const Navbar = () => {
         <Link className="navbar-brand" to="/">
           <img
             rel="preload"
-            src={logo}
+            src={logo1}
             alt="Success Brand Solutions"
             className="logo-image"
           />
         </Link>
-
         <button
           className="navbar-toggler"
           type="button"
@@ -122,3 +126,152 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+
+
+
+
+/* Clean white navbar with accent */
+.clean-navbar {
+  background-color: #5d3d1f;
+  /* 5c3d20 */
+  border-bottom: 2px solid #e0e0e0;
+}
+
+/* Logo height */
+.logo-image {
+  height: 70px;
+}
+.navbar-light .navbar-toggler-icon,
+.navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Responsive nav items width */
+.responsive-width {
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .responsive-width {
+    width: 50%;
+  }
+}
+
+/* Nav link styles with Indigo accent */
+.nav-link {
+  color: white !important;
+  font-weight: 700;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+@media (min-width: 992px) {
+  .nav-link {
+    font-size: 18px;
+  }
+}
+
+/* Hover/active effect */
+.nav-link:hover,
+.nav-link.active {
+  background-color: rgba(63, 81, 181, 0.1);
+  color: #303f9f !important;
+}
+
+nav ul li {
+  font-weight: bold;
+}
+
+/* ---------- Dropdown Styles ---------- */
+
+.custom-dropdown {
+  position: relative;
+}
+
+.custom-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 999;
+  background-color: #ffffff;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  min-width: 220px;
+  border-radius: 6px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Show dropdown on hover (desktop only) */
+@media (min-width: 992px) {
+  .custom-dropdown:hover .custom-dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .custom-dropdown-menu {
+    position: absolute;
+  }
+}
+
+.custom-dropdown-menu li {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.custom-dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.custom-dropdown-menu .dropdown-item {
+  padding: 10px 16px;
+  color: #3f51b5;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.custom-dropdown-menu .dropdown-item:hover {
+  background-color: rgba(63, 81, 181, 0.08);
+  color: #303f9f;
+}
+
+/* ----------- Mobile Support: Show dropdown on click ----------- */
+@media (max-width: 991px) {
+  .custom-dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border-radius: 0;
+    opacity: 1 !important;
+    visibility: visible !important;
+    background-color: transparent;
+  }
+
+  .custom-dropdown-menu.show {
+    display: block !important;
+  }
+
+  .custom-dropdown-menu .dropdown-item {
+    padding-left: 25px;
+    background-color: #f9f9f9;
+  }
+
+  .custom-dropdown.show .custom-dropdown-menu {
+    display: block !important;
+  }
+}
