@@ -129,7 +129,7 @@ export default Navbar;
 
 
 
-
+.........................
 
 
 /* Clean white navbar with accent */

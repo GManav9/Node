@@ -1,7 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+
 import logo from "../assets/logo.png";
+import logo1 from "../assets/logowhite.png";
+
 import Collapse from "bootstrap/js/dist/collapse";
 
 const Navbar = () => {
@@ -68,12 +73,11 @@ const Navbar = () => {
         <Link className="navbar-brand" to="/">
           <img
             rel="preload"
-            src={logo}
+            src={logo1}
             alt="Success Brand Solutions"
             className="logo-image"
           />
         </Link>
-
         <button
           className="navbar-toggler"
           type="button"
