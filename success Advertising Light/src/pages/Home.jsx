@@ -52,16 +52,10 @@ import china from "../assets/ChinaFlex.jpg";
 
 const services = [
   {
-    title: "Newspaper Advertising",
     image: china,
-    description:
-      "Target specific demographics through leading newspaper publications.",
   },
   {
-    title: "Radio Advertising",
-    image: radio1,
-    description:
-      "Leverage the power of radio to increase market share and drive revenue.",
+    image: china,
   },
   {
     title: "Television Advertising",
@@ -223,7 +217,7 @@ function Home() {
                 loop={true}
                 navigation={{ prevEl: navPrev, nextEl: navNext }}
                 breakpoints={{
-                  0: { slidesPerView: 1 },
+                  0: { slidesPerView: 2 },
                   576: { slidesPerView: 1 },
                   768: { slidesPerView: 2 },
                   992: { slidesPerView: 3 },
@@ -240,10 +234,7 @@ function Home() {
                         className="card-img-top img-fluid"
                         alt={service.title}
                       />
-                      <div className="card-body text-center d-flex flex-column justify-content-center">
-                        <h5 className="card-title">{service.title}</h5>
-                        <p className="card-text">{service.description}</p>
-                      </div>
+                      
                     </div>
                   </SwiperSlide>
                 ))}

@@ -197,14 +197,14 @@
     #f5f9ff,
     #e9f1fb
   ); /* lighter blue gradient */
-  padding: 4rem 1rem;
+  /* padding: 4rem 1rem; */
   color: #1a1a1a;
 }
 
 .services-section h2 {
   color: #004a87; /* deep brand blue */
   font-weight: 700;
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
 }
 
 .services-section .card {
