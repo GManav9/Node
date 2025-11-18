@@ -9,7 +9,7 @@
   font-weight: 900;
   color: #2b2d42;
   background: linear-gradient(to right, #4b6cb7, #182848);
-  -webkit-background-clip: text;
+  /* -webkit-background-clip: text; */
   -webkit-text-fill-color: transparent;
 }
 
@@ -1101,4 +1101,3 @@
     background-position: top; /* mobile me crop sudhar jaata hai */
   }
 }
-  
