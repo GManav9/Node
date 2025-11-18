@@ -47,51 +47,31 @@ import logo20 from "../assets/client20.png";
 
 import Footer from "../components/Footer";
 
-import china from "../assets/ChinaFlex.jpg";
-
+import Offer1 from "../assets/Offer1.jpg";
+import Offer2 from "../assets/Offer2.jpg";
+import Offer3 from "../assets/Offer3.jpg";
+import Offer4 from "../assets/Offer4.jpg";
+import Offer5 from "../assets/Offer5.jpg";
+import Offer6 from "../assets/Offer6.jpg";
 
 const services = [
   {
-    image: china,
+    image: Offer1,
   },
   {
-    image: china,
+    image: Offer2,
   },
   {
-    title: "Television Advertising",
-    image: Televisions,
-    description:
-      "Show and tell a wide audience about your products or services via TV.",
+    image: Offer3,
   },
   {
-    title: "Cinema Advertising",
-    image: cinema,
-    description:
-      "Engage with a large audience through impactful cinema advertisements.",
+    image: Offer4,
   },
   {
-    title: "Out Of Home",
-    image: Hoarding,
-    description:
-      "Promote your brand through strategic outdoor advertising campaigns.",
+    image: Offer5,
   },
   {
-    title: "Event Management & Road Shows",
-    image: Events,
-    description:
-      "Plan and execute engaging events and road shows that leave a lasting impression.",
-  },
-  {
-    title: "Social Media Marketing",
-    image: Social,
-    description:
-      "Build your brand's reputation through effective social media strategies.",
-  },
-  {
-    title: "Integrated 360 Marketing",
-    image: Marketing360,
-    description:
-      "Implement comprehensive marketing solutions across all platforms.",
+    image: Offer6,
   },
 ];
 const reviews = [
@@ -115,16 +95,13 @@ const reviews = [
   },
 ];
 
-
-import slide1 from "../assets/banner2.jpeg";
-import slide2 from "../assets/banner2.jpeg";
-import slide3 from "../assets/banner2.jpeg";
-import slide4 from "../assets/banner2.jpeg";
-import slide5 from "../assets/banner2.jpeg";
+import slide1 from "../assets/Banner1.jpg";
+import slide2 from "../assets/Banner2.jpg";
+import slide3 from "../assets/Banner3.jpg";
+import slide4 from "../assets/Banner4.jpg";
+import slide5 from "../assets/Banner5.jpg";
 
 const topBannerImages = [slide1, slide2, slide3, slide4, slide5];
-
-
 
 function Home() {
   useEffect(() => {
@@ -188,12 +165,10 @@ function Home() {
         </Swiper>
       </section>
 
-      
-
       {/* Services Section */}
       <section id="services" className="services-section py-5">
         <div className="container">
-          <h2 className="text-center mb-4">Our Services</h2>
+          <h2 className="text-center mb-4">Offers</h2>
 
           <div
             className="d-flex align-items-center justify-content-center"
@@ -218,9 +193,10 @@ function Home() {
                 navigation={{ prevEl: navPrev, nextEl: navNext }}
                 breakpoints={{
                   0: { slidesPerView: 2 },
-                  576: { slidesPerView: 1 },
+                  576: { slidesPerView: 2 },
                   768: { slidesPerView: 2 },
-                  992: { slidesPerView: 3 },
+                  992: { slidesPerView: 2 },
+                  1080: { slidesPerView: 3 },
                 }}
                 style={{ width: "100%" }}
                 allowTouchMove={true}
@@ -228,13 +204,12 @@ function Home() {
               >
                 {services.map((service, index) => (
                   <SwiperSlide key={index}>
-                    <div className="card h-100 shadow-sm">
+                    <div className="card shadow-sm">
                       <img
                         src={service.image}
                         className="card-img-top img-fluid"
                         alt={service.title}
                       />
-                      
                     </div>
                   </SwiperSlide>
                 ))}

@@ -114,7 +114,7 @@ const Services = () => {
 
       <div className="services-page">
         {/* Hero Section */}
-        {/* <section className="services-hero">
+        <section className="services-hero">
           <div className="container">
             <div className="row align-items-center">
               <div className="col-12 col-lg-6 text-center text-lg-start mb-4 mb-lg-0 text-content">
@@ -134,7 +134,7 @@ const Services = () => {
               </div>
             </div>
           </div>
-        </section> */}
+        </section>
 
         {/* What We Offer Section */}
         <section className="highlight-section">
@@ -169,19 +169,14 @@ const Services = () => {
           </div>
         </section>
 
-        <div className="solvent-hero-section">
-          <div className="solvent-hero-overlay">
-            {/* Optional heading & tagline if you want to keep */}
-          </div>
-        </div>
-
         {/* Flex Banner Section */}
-        {/* <section className="flex-banner-section py-5">
+        <section className="flex-banner-section py-5">
           <div className="container">
             <h2 className="section-title text-center mb-4">
               Flex Banner & Rollup Standee
             </h2>
             <div className="row align-items-stretch">
+              {/* Image Side */}
               <div className="col-md-6 mb-4 mb-md-0 d-flex">
                 <img
                   src={flexBanner}
@@ -190,6 +185,7 @@ const Services = () => {
                 />
               </div>
 
+              {/* Content/Price Side */}
               <div className="col-md-6 d-flex align-items-stretch">
                 {!showPrices ? (
                   <div className="flex-content-box animate-slide-in d-flex flex-column justify-content-evenly">
@@ -307,15 +303,16 @@ const Services = () => {
               </div>
             </div>
           </div>
-        </section> */}
+        </section>
 
         {/* Auto Rickshaw Advertising Section */}
-        {/* <section className="auto-rickshaw-section py-5">
+        <section className="auto-rickshaw-section py-5">
           <div className="container">
             <h2 className="section-title text-center mb-4">
               Auto Rickshaw Advertising
             </h2>
             <div className="row align-items-stretch flex-md-row-reverse">
+              {/* Image Side - Right */}
               <div className="col-md-6 mb-4 mb-md-0 d-flex">
                 <img
                   src={AutoRicksaw}
@@ -324,6 +321,7 @@ const Services = () => {
                 />
               </div>
 
+              {/* Content/Price Side - Left */}
               <div className="col-md-6 d-flex align-items-stretch">
                 {!showRickshawPrices ? (
                   <div className="auto-rickshaw-content-box animate-slide-in d-flex flex-column justify-content-evenly">
@@ -401,12 +399,13 @@ const Services = () => {
               </div>
             </div>
           </div>
-        </section> */}
+        </section>
 
-        {/* <section className="flex-example-section py-5">
+        <section className="flex-example-section py-5">
           <div className="container">
             <h2 className="section-title text-center mb-4">Poll Board</h2>
             <div className="row align-items-stretch">
+              {/* Image Side */}
               <div className="col-md-6 mb-4 mb-md-0 d-flex">
                 <img
                   src={OO}
@@ -415,6 +414,7 @@ const Services = () => {
                 />
               </div>
 
+              {/* Content/Price Side */}
               <div className="col-md-6 d-flex align-items-stretch">
                 {!showPollboardPrices ? (
                   <div className="flex-content-box animate-slide-in d-flex flex-column justify-content-evenly">
@@ -504,15 +504,16 @@ const Services = () => {
               </div>
             </div>
           </div>
-        </section> */}
+        </section>
 
         {/* ACP Board Advertising Section */}
-        {/* <section className="acp-board-section py-5">
+        <section className="acp-board-section py-5">
           <div className="container">
             <h2 className="section-title text-center mb-4">
               ACP Board Advertising
             </h2>
             <div className="row align-items-stretch flex-md-row-reverse">
+              {/* Image Side - Right */}
               <div className="col-md-6 mb-4 mb-md-0 d-flex">
                 <img
                   src={AcpBoardImg}
@@ -521,6 +522,7 @@ const Services = () => {
                 />
               </div>
 
+              {/* Content / Price Toggle - Left */}
               <div className="col-md-6 d-flex align-items-stretch">
                 {!showAcpPrices ? (
                   <div className="acp-board-content-box animate-slide-in d-flex flex-column justify-content-evenly">
@@ -644,15 +646,16 @@ const Services = () => {
               </div>
             </div>
           </div>
-        </section> */}
+        </section>
 
         {/* hoarding section */}
-        {/* <section className="hoarding-section py-5">
+        <section className="hoarding-section py-5">
           <div className="container">
             <h2 className="section-title text-center mb-4">
               Hoarding Advertising
             </h2>
             <div className="row align-items-stretch">
+              {/* Image Side */}
               <div className="col-md-6 mb-4 mb-md-0 d-flex">
                 <img
                   src={ho}
@@ -661,6 +664,7 @@ const Services = () => {
                 />
               </div>
 
+              {/* Content/Price Side */}
               <div className="col-md-6 d-flex align-items-stretch">
                 {!showHoardingPrices ? (
                   <div className="hoarding-content-box animate-slide-in d-flex flex-column justify-content-evenly">
@@ -701,6 +705,7 @@ const Services = () => {
                       </button>
                       <h4 className="mb-3">Hoarding Printing Price List</h4>
 
+                      {/* --- Table 1 --- */}
                       <h5 className="mb-3 text-uppercase">
                         4x2 I-Channel + 1.5x1.5 Pipe + BB Flex + Pasting +
                         Design + Labor Work
@@ -727,6 +732,7 @@ const Services = () => {
                         </tbody>
                       </table>
 
+                      {/* --- Table 2 --- */}
                       <h5 className="mt-5 mb-3 text-uppercase">
                         2x2 Pipe + BB Flex + Pasting + Design + Labor Work
                       </h5>
@@ -752,6 +758,7 @@ const Services = () => {
                         </tbody>
                       </table>
 
+                      {/* --- Table 3 --- */}
                       <h5 className="mt-5 mb-3 text-uppercase">
                         3x1.5 C-Channel + 1.5x1.5 Pipe + BB Flex + Pasting +
                         Design + Labor Work
@@ -788,15 +795,16 @@ const Services = () => {
               </div>
             </div>
           </div>
-        </section> */}
+        </section>
 
         {/* Pamphlet Design & Printing Section */}
-        {/* <section className="pamphlet-section py-5">
+        <section className="pamphlet-section py-5">
           <div className="container">
             <h2 className="section-title text-center mb-4">
               Pamphlet Design & Printing
             </h2>
             <div className="row align-items-stretch">
+              {/* Content / Price Toggle - Left */}
               <div className="col-md-6 d-flex align-items-stretch order-2 order-md-1">
                 {!showPamphletPrices ? (
                   <div className="pamphlet-content-box animate-slide-in d-flex flex-column justify-content-evenly">
@@ -838,6 +846,7 @@ const Services = () => {
                     </button>
                     <h4 className="price-heading">Pamphlet Printing Rates</h4>
 
+                    {/* TAB BUTTONS */}
                     <div className="btn-group mb-3">
                       <button
                         className={`btn btn-outline-primary ${
@@ -857,6 +866,7 @@ const Services = () => {
                       </button>
                     </div>
 
+                    {/* A8 Table */}
                     {activePamphletTab === "A8" && (
                       <>
                         <h5 className="mt-3 mb-2 fw-bold text-primary">
@@ -918,6 +928,7 @@ const Services = () => {
                       </>
                     )}
 
+                    {/* A4 Table */}
                     {activePamphletTab === "A4" && (
                       <>
                         <h5 className="mt-4 mb-2 fw-bold text-primary">
@@ -986,6 +997,7 @@ const Services = () => {
                 )}
               </div>
 
+              {/* Image - Right */}
               <div className="col-md-6 mb-4 mb-md-0 d-flex order-1 order-md-2">
                 <img
                   src={pamphlet}
@@ -995,7 +1007,7 @@ const Services = () => {
               </div>
             </div>
           </div>
-        </section> */}
+        </section>
       </div>
 
       <Footer />

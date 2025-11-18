@@ -243,6 +243,36 @@
   border-color: #e30613;
 }
 
+/* ....... */
+
+.services-section .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* full height for equal boxes */
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Ensure all images scale evenly */
+.services-section .card-img-top {
+  height: 500px; /* fixed consistent image height */
+  object-fit: cover; /* keeps image proportion */
+  width: 100%;
+}
+
+/* For responsive view: reduce height slightly */
+@media (max-width: 768px) {
+  .services-section .card-img-top {
+    height: 400px;
+  }
+}
+@media (max-width: 576px) {
+  .services-section .card-img-top {
+    height: 300px;
+  }
+}
+
 /* ---------- Services SECTION ---------- */
 
 /* ---------- WELCOME SECTION (Updated to Match Hero Style) ---------- */
