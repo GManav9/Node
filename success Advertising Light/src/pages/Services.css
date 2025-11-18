@@ -1059,8 +1059,8 @@
 }
 .solvent-hero-section {
   width: 100%;
-  height: 80vh; /* adjust: 60vh / 90vh etc */
-  background-image: url("/src/assets/Solvent.jpeg"); /* replace your image path */
+  height: 70vh; /* adjust: 60vh / 90vh etc */
+  background-image: url("/src/assets/Solvent.jpg"); /* replace your image path */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1078,26 +1078,26 @@
 
 @media (max-width: 992px) {
   .solvent-hero-section {
-    height: 50vh; /* mobile me image perfect dikhegi */
+    height: 45vh; /* mobile me image perfect dikhegi */
     background-position: top; /* mobile me crop sudhar jaata hai */
   }
 }
 @media (max-width: 768px) {
   .solvent-hero-section {
-    height: 45vh; /* mobile me image perfect dikhegi */
+    height: 38vh; /* mobile me image perfect dikhegi */
     background-position: top; /* mobile me crop sudhar jaata hai */
   }
 }
 
 @media (max-width: 576px) {
   .solvent-hero-section {
-    height: 40vh; /* mobile me image perfect dikhegi */
+    height: 28vh; /* mobile me image perfect dikhegi */
     background-position: top; /* mobile me crop sudhar jaata hai */
   }
 }
 @media (max-width: 480px) {
   .solvent-hero-section {
-    height: 35vh; /* mobile me image perfect dikhegi */
+    height: 23vh; /* mobile me image perfect dikhegi */
     background-position: top; /* mobile me crop sudhar jaata hai */
   }
 }
