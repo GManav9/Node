@@ -22,7 +22,7 @@ import Hoarding from "../assets/Hoarding.png";
 import Social from "../assets/Social.png";
 import Marketing360 from "../assets/Marketing360.png";
 import logo from "../assets/logo.png";
-import su from "../assets/Su.png";
+import su from "../assets/Su.jpg";
 
 import logo1 from "../assets/client1.png";
 import logo2 from "../assets/client2.png";
@@ -141,6 +141,32 @@ function Home() {
   return (
     <>
       <Navbar />
+
+      <div class="social-sticky">
+        <a
+          href="https://instagram.com/yourpage"
+          target="_blank"
+          class="instagram"
+        >
+          Instagram
+        </a>
+
+        <a
+          href="https://facebook.com/yourpage"
+          target="_blank"
+          class="facebook"
+        >
+          Facebook
+        </a>
+
+        <a
+          href="https://wa.me/919265088148?text=Hello%20I%20want%20to%20know%20more"
+          target="_blank"
+          class="whatsapp"
+        >
+          WhatsApp
+        </a>
+      </div>
 
       {/* ===== Top Banner Slider ===== */}
       <section className="top-banner-slider">
