@@ -1,14 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./Services.css";
-import mainImage from "../assets/Main.jpg";
-import servicesImage from "../assets/AllServices.jpg";
-import flexBanner from "../assets/flex.png";
-import AutoRicksaw from "../assets/AutoRicksaw2.jpg";
-
-import ho from "../assets/ho.jpg";
-import AcpBoardImg from "../assets/acpboard.jpg"; // adjust path as needed
-import OO from "../assets/OO.jpg";
-import pamphlet from "../assets/pamphlet.jpg";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -137,7 +128,7 @@ const Services = () => {
         </section> */}
 
         {/* What We Offer Section */}
-        <section className="highlight-section">
+        {/* <section className="highlight-section">
           <div className="container">
             <h2 className="section-title text-center mb-5">What We Offer</h2>
             <div className="row align-items-center">
@@ -167,10 +158,50 @@ const Services = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
-        <div className="solvent-hero-section">
-          <div className="solvent-hero-overlay">
+        <div className="s1">
+          <div className="s1overlay">
+            {/* Optional heading & tagline if you want to keep */}
+          </div>
+        </div>
+
+        <div className="s2">
+          <div className="s2overlay">
+            {/* Optional heading & tagline if you want to keep */}
+          </div>
+        </div>
+
+        <div className="s3">
+          <div className="s3overlay">
+            {/* Optional heading & tagline if you want to keep */}
+          </div>
+        </div>
+
+        <div className="s4">
+          <div className="s4overlay">
+            {/* Optional heading & tagline if you want to keep */}
+          </div>
+        </div>
+
+        <div className="s5">
+          <div className="s5overlay">
+            {/* Optional heading & tagline if you want to keep */}
+          </div>
+        </div>
+
+        <div className="s6">
+          <div className="s6overlay">
+            {/* Optional heading & tagline if you want to keep */}
+          </div>
+        </div>
+        <div className="s7">
+          <div className="s7overlay">
+            {/* Optional heading & tagline if you want to keep */}
+          </div>
+        </div>
+        <div className="s8">
+          <div className="s8overlay">
             {/* Optional heading & tagline if you want to keep */}
           </div>
         </div>

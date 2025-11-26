@@ -1057,16 +1057,17 @@
     display: block;
   }
 }
-.solvent-hero-section {
+/* /// */
+.s1 {
   width: 100%;
   height: 70vh; /* adjust: 60vh / 90vh etc */
-  background-image: url("/src/assets/Solvent.jpg"); /* replace your image path */
+  background-image: url("/src/assets/Service1.jpg"); /* replace your image path */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.solvent-hero-overlay {
+.s1overlay {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0); /* fully transparent, remove if not needed */
@@ -1077,27 +1078,257 @@
 }
 
 @media (max-width: 992px) {
-  .solvent-hero-section {
+  .s1 {
     height: 45vh; /* mobile me image perfect dikhegi */
     background-position: top; /* mobile me crop sudhar jaata hai */
   }
 }
 @media (max-width: 768px) {
-  .solvent-hero-section {
+  .s1 {
     height: 38vh; /* mobile me image perfect dikhegi */
     background-position: top; /* mobile me crop sudhar jaata hai */
   }
 }
 
 @media (max-width: 576px) {
-  .solvent-hero-section {
+  .s1 {
     height: 28vh; /* mobile me image perfect dikhegi */
     background-position: top; /* mobile me crop sudhar jaata hai */
   }
 }
 @media (max-width: 480px) {
-  .solvent-hero-section {
+  .s1 {
     height: 23vh; /* mobile me image perfect dikhegi */
     background-position: top; /* mobile me crop sudhar jaata hai */
   }
 }
+/* /// */
+.s2 {
+  width: 100%;
+  height: 70vh; /* adjust: 60vh / 90vh etc */
+  background-image: url("/src/assets/Service2.jpg"); /* replace your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.s2overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0); /* fully transparent, remove if not needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media (max-width: 992px) {
+  .s2 {
+    height: 45vh; /* mobile me image perfect dikhegi */
+    background-position: top; /* mobile me crop sudhar jaata hai */
+  }
+}
+@media (max-width: 768px) {
+  .s2 {
+    height: 38vh; /* mobile me image perfect dikhegi */
+    background-position: top; /* mobile me crop sudhar jaata hai */
+  }
+}
+
+@media (max-width: 576px) {
+  .s2 {
+    height: 28vh; /* mobile me image perfect dikhegi */
+    background-position: top; /* mobile me crop sudhar jaata hai */
+  }
+}
+@media (max-width: 480px) {
+  .s2 {
+    height: 23vh; /* mobile me image perfect dikhegi */
+    background-position: top; /* mobile me crop sudhar jaata hai */
+  }
+}
+/* /// */
+
+.s3 {
+  width: 100%;
+  height: 70vh; /* adjust: 60vh / 90vh etc */
+  background-image: url("/src/assets/Service3.jpg"); /* replace your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.s3overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0); /* fully transparent, remove if not needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media (max-width: 992px) {
+  .s3 {
+    height: 45vh; /* mobile me image perfect dikhegi */
+    background-position: top; /* mobile me crop sudhar jaata hai */
+  }
+}
+@media (max-width: 768px) {
+  .s3 {
+    height: 38vh; /* mobile me image perfect dikhegi */
+    background-position: top; /* mobile me crop sudhar jaata hai */
+  }
+}
+
+@media (max-width: 576px) {
+  .s3 {
+    height: 28vh; /* mobile me image perfect dikhegi */
+    background-position: top; /* mobile me crop sudhar jaata hai */
+  }
+}
+@media (max-width: 480px) {
+  .s3 {
+    height: 23vh; /* mobile me image perfect dikhegi */
+    background-position: top; /* mobile me crop sudhar jaata hai */
+  }
+}
+/* /// */
+
+.s4 {
+  width: 100%;
+  height: 70vh; /* adjust: 60vh / 90vh etc */
+  background-image: url("/src/assets/Service4.jpg"); /* replace your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.s4overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0); /* fully transparent, remove if not needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media (max-width: 992px) {
+  .s4 {
+    height: 45vh; /* mobile me image perfect dikhegi */
+    background-position: top; /* mobile me crop sudhar jaata hai */
+  }
+}
+@media (max-width: 768px) {
+  .s4 {
+    height: 38vh; /* mobile me image perfect dikhegi */
+    background-position: top; /* mobile me crop sudhar jaata hai */
+  }
+}
+
+@media (max-width: 576px) {
+  .s4 {
+    height: 28vh; /* mobile me image perfect dikhegi */
+    background-position: top; /* mobile me crop sudhar jaata hai */
+  }
+}
+@media (max-width: 480px) {
+  .s4 {
+    height: 23vh; /* mobile me image perfect dikhegi */
+    background-position: top; /* mobile me crop sudhar jaata hai */
+  }
+}
+/* /// */
+
+.s5 {
+  width: 100%;
+  height: 70vh; /* adjust: 60vh / 90vh etc */
+  background-image: url("/src/assets/Service5.jpg"); /* replace your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.s5overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0); /* fully transparent, remove if not needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media (max-width: 992px) {
+  .s5 {
+    height: 45vh; /* mobile me image perfect dikhegi */
+    background-position: top; /* mobile me crop sudhar jaata hai */
+  }
+}
+@media (max-width: 768px) {
+  .s5 {
+    height: 38vh; /* mobile me image perfect dikhegi */
+    background-position: top; /* mobile me crop sudhar jaata hai */
+  }
+}
+
+@media (max-width: 576px) {
+  .s5 {
+    height: 28vh; /* mobile me image perfect dikhegi */
+    background-position: top; /* mobile me crop sudhar jaata hai */
+  }
+}
+@media (max-width: 480px) {
+  .s5 {
+    height: 23vh; /* mobile me image perfect dikhegi */
+    background-position: top; /* mobile me crop sudhar jaata hai */
+  }
+}
+/* /// */
+
+.s6 {
+  width: 100%;
+  height: 70vh; /* adjust: 60vh / 90vh etc */
+  background-image: url("/src/assets/Service6.jpg"); /* replace your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.s6overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0); /* fully transparent, remove if not needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media (max-width: 992px) {
+  .s6 {
+    height: 45vh; /* mobile me image perfect dikhegi */
+    background-position: top; /* mobile me crop sudhar jaata hai */
+  }
+}
+@media (max-width: 768px) {
+  .s6 {
+    height: 38vh; /* mobile me image perfect dikhegi */
+    background-position: top; /* mobile me crop sudhar jaata hai */
+  }
+}
+
+@media (max-width: 576px) {
+  .s6 {
+    height: 28vh; /* mobile me image perfect dikhegi */
+    background-position: top; /* mobile me crop sudhar jaata hai */
+  }
+}
+@media (max-width: 480px) {
+  .s6 {
+    height: 23vh; /* mobile me image perfect dikhegi */
+    background-position: top; /* mobile me crop sudhar jaata hai */
+  }
+}
+/* /// */

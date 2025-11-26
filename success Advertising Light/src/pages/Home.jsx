@@ -12,16 +12,6 @@ import "./Home.css";
 import "swiper/css";
 import "swiper/css/navigation";
 
-import News from "../assets/News.jpg";
-import radio1 from "../assets/radio1.jpg";
-
-import Televisions from "../assets/Televisions.png";
-import Events from "../assets/Events.png";
-import cinema from "../assets/cinema.png";
-import Hoarding from "../assets/Hoarding.png";
-import Social from "../assets/Social.png";
-import Marketing360 from "../assets/Marketing360.png";
-import logo from "../assets/logo.png";
 import su from "../assets/Su.jpg";
 
 import logo1 from "../assets/client1.png";
@@ -47,12 +37,18 @@ import logo20 from "../assets/client20.png";
 
 import Footer from "../components/Footer";
 
-import Offer1 from "../assets/Offer1.jpg";
-import Offer2 from "../assets/Offer2.jpg";
-import Offer3 from "../assets/Offer3.jpg";
-import Offer4 from "../assets/Offer4.jpg";
-import Offer5 from "../assets/Offer5.jpg";
-import Offer6 from "../assets/Offer6.jpg";
+import Offer1 from "../assets/1.jpg";
+import Offer2 from "../assets/2.jpg";
+import Offer3 from "../assets/3.jpg";
+import Offer4 from "../assets/4.jpg";
+import Offer5 from "../assets/5.jpg";
+import Offer6 from "../assets/6.jpg";
+import Offer7 from "../assets/7.jpg";
+import Offer8 from "../assets/8.jpg";
+import Offer9 from "../assets/9.jpg";
+import Offer10 from "../assets/10.jpg";
+import Offer11 from "../assets/11.jpg";
+import Offer12 from "../assets/12.jpg";
 
 const services = [
   {
@@ -72,6 +68,24 @@ const services = [
   },
   {
     image: Offer6,
+  },
+  {
+    image: Offer7,
+  },
+  {
+    image: Offer8,
+  },
+  {
+    image: Offer9,
+  },
+  {
+    image: Offer10,
+  },
+  {
+    image: Offer11,
+  },
+  {
+    image: Offer12,
   },
 ];
 const reviews = [
@@ -264,7 +278,7 @@ function Home() {
             <div style={{ flexGrow: 1, minWidth: 0 }}>
               <Swiper
                 modules={[Navigation, Autoplay]}
-                spaceBetween={30}
+                spaceBetween={20}
                 slidesPerView={3}
                 loop={true}
                 navigation={{ prevEl: navPrev, nextEl: navNext }}
@@ -284,7 +298,7 @@ function Home() {
                     <div className="card shadow-sm">
                       <img
                         src={service.image}
-                        className="card-img-top img-fluid"
+                        className="card-img-top"
                         alt={service.title}
                       />
                     </div>
