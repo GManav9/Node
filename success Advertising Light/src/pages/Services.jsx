@@ -5,14 +5,14 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 // 🔹 Apni 8 service images yaha import karo
-import service1 from "../assets/service1.jpg";
-import service2 from "../assets/service2.jpg";
-import service3 from "../assets/service3.jpg";
-import service4 from "../assets/service4.jpg";
-import service5 from "../assets/service5.jpg";
-import service6 from "../assets/service6.jpg";
-import service7 from "../assets/service7.jpg";
-import service8 from "../assets/service8.jpg";
+import service1 from "../assets/Service1.jpg";
+import service2 from "../assets/Service2.jpg";
+import service3 from "../assets/Service3.jpg";
+import service4 from "../assets/Service4.jpg";
+import service5 from "../assets/Service5.jpg";
+import service6 from "../assets/Service6.jpg";
+import service7 from "../assets/Service7.jpg";
+import service8 from "../assets/Service8.jpg";
 
 const serviceImages = [
   service1,
