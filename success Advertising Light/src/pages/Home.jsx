@@ -46,7 +46,7 @@ import Offer6 from "../assets/6.jpg";
 import Offer7 from "../assets/7.jpg";
 import Offer8 from "../assets/8.jpg";
 import Offer9 from "../assets/9.jpg";
-import Offer10 from "../assets/10.jpg";
+// import Offer10 from "../assets/10.jpg";
 import Offer11 from "../assets/11.jpg";
 import Offer12 from "../assets/12.jpg";
 
@@ -78,9 +78,7 @@ const services = [
   {
     image: Offer9,
   },
-  {
-    image: Offer10,
-  },
+
   {
     image: Offer11,
   },
@@ -155,11 +153,11 @@ function Home() {
   return (
     <>
       <Navbar />
-      <div class="social-sticky">
+      <div className="social-sticky">
         <a
           href="https://instagram.com/sample_username"
           target="_blank"
-          class="instagram"
+          className="instagram"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -175,7 +173,7 @@ function Home() {
         <a
           href="https://facebook.com/sample_page"
           target="_blank"
-          class="facebook"
+          className="facebook"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -191,7 +189,7 @@ function Home() {
         <a
           href="https://wa.me/919725559366?text=Hello%20I%20want%20to%20know%20more"
           target="_blank"
-          class="whatsapp"
+          className="whatsapp"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -257,7 +255,7 @@ function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="services-section py-5">
+      <section id="services" className="offers-section py-5">
         <div className="container">
           <h2 className="text-center mb-4">Offers</h2>
 
