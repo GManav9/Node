@@ -6,6 +6,8 @@
 .service-banner {
   width: 100%;
   background: #000; /* black padding agar image ratio wide ho */
+  /* border: 5px solid white; */
+  border-bottom: 20px solid white;
 }
 
 /* Image - MOST IMPORTANT PART */
