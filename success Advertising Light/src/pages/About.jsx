@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import "./Home.css";
 import "./About.css"; // ✅ required!
 import aboutImg from "../assets/aboutImg.jpg";
+import heroImg from "../assets/AboutUs.jpg";
 import { FaBullseye, FaLightbulb, FaHandshake } from "react-icons/fa"; // at the top of About.jsx
 
 function About() {
@@ -15,8 +16,12 @@ function About() {
     <>
       <Navbar />
 
+      <section className="hero-image-only">
+        <img src={heroImg} alt="Hero" className="hero-img" loading="eager" />
+      </section>
+
       {/* Hero Banner */}
-      <section
+      {/* <section
         className="position-relative d-flex align-items-center justify-content-center text-white text-center"
         style={{
           height: "90vh",
@@ -26,7 +31,6 @@ function About() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        {/* Overlay */}
         <div
           style={{
             position: "absolute",
@@ -39,12 +43,11 @@ function About() {
           }}
         ></div>
 
-        {/* Content */}
         <div className="container position-relative" style={{ zIndex: 2 }}>
           <h1 className="display-4 fw-bold text-shadow">Who We Are</h1>
           <p className="lead mt-3">Building brands with purpose and passion</p>
         </div>
-      </section>
+      </section> */}
 
       {/* Welcome Section - Redesigned, no image */}
       <section
