@@ -69,7 +69,12 @@ function Contact() {
                   <FaPhoneAlt size={22} className="me-3 text-primary mt-1" />
                   <div>
                     <h6 className="fw-bold mb-1">Call Now</h6>
-                    <p className="mb-0">+91 9725559366</p>
+                    <a
+                      href="tel:+919725559366"
+                      className="mb-0 text-decoration-none text-dark"
+                    >
+                      +91 9725559366
+                    </a>
                   </div>
                 </div>
 

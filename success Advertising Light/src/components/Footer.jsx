@@ -23,9 +23,12 @@ const Footer = () => {
             <p className="footer-contact">
               <FaEnvelope /> contact@Success.com
             </p>
-            <p className="footer-contact">
-              <FaPhoneAlt /> +91 xxxxxxxxxx
-            </p>
+            <a
+              href="tel:+919725559366"
+              className="footer-contact text-decoration-none"
+            >
+              <FaPhoneAlt /> +91 9725559366
+            </a>
           </div>
 
           {/* Useful Links */}

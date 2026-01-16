@@ -141,3 +141,61 @@ nav ul li {
     display: block !important;
   }
 }
+
+/* ===== Brochure Button ===== */
+.brochure-item {
+  position: relative;
+  text-align: center;
+}
+
+/* Gradient Button */
+.brochure-btn {
+  background: linear-gradient(135deg, #ffb703, #fb8500);
+  color: #000 !important;
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+/* Hover Animation */
+.brochure-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 183, 3, 0.4);
+  color: #000 !important;
+}
+
+/* PDF Icon */
+.pdf-icon {
+  font-size: 16px;
+}
+
+/* Download Text */
+.download-text {
+  display: block;
+  font-size: 12px;
+  color: #ffb703;
+  margin-top: 2px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.download-text:hover {
+  color: #fb8500;
+}
+
+/* ===== Mobile Responsive ===== */
+@media (max-width: 991px) {
+  .brochure-btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .download-text {
+    text-align: center;
+  }
+}

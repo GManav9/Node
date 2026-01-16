@@ -104,9 +104,13 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link nav-text" to="/work">
-                Work
-              </Link>
+              <span
+                className="nav-link nav-text"
+                style={{ cursor: "pointer" }}
+                onClick={() => (window.location.href = "/brochure.pdf")}
+              >
+                Brochure
+              </span>
             </li>
             <li className="nav-item">
               <Link className="nav-link nav-text" to="/about">
