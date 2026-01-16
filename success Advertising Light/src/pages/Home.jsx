@@ -374,54 +374,11 @@ function Home() {
         <div className="container text-center position-relative">
           <h2 className="mb-5 fw-bold text-primary">What Our Clients Say</h2>
 
-          {/* Prev button - visible only on lg and above */}
-          <button
-            ref={clientPrevRef}
-            className="btn btn-outline-primary position-absolute top-50 start-0 translate-middle-y d-none d-lg-inline-flex"
-            style={{ zIndex: 10 }}
-            aria-label="Previous Review"
-          >
-            ←
-          </button>
-
-          {/* Swiper Slider */}
-          <Swiper
-            modules={[Autoplay, Navigation]}
-            spaceBetween={30}
-            slidesPerView={1}
-            loop={true}
-            autoplay={{ delay: 5000, disableOnInteraction: false }}
-            speed={1000}
-            navigation={{ prevEl: clientNavPrev, nextEl: clientNavNext }}
-            className="client-review-swiper"
-          >
-            {reviews.map((review, index) => (
-              <SwiperSlide key={index}>
-                <div
-                  className="review-card text-center mx-auto p-4 shadow-sm rounded"
-                  style={{ maxWidth: "700px" }}
-                >
-                  <FaQuoteLeft
-                    className="quote-icon mb-3 text-primary"
-                    size={40}
-                  />
-                  <p className="review-text fst-italic">"{review.review}"</p>
-                  <h5 className="mt-4 fw-bold">{review.name}</h5>
-                  <p className="text-muted">{review.role}</p>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-
-          {/* Next button - visible only on lg and above */}
-          <button
-            ref={clientNextRef}
-            className="btn btn-outline-primary position-absolute top-50 end-0 translate-middle-y d-none d-lg-inline-flex"
-            style={{ zIndex: 10 }}
-            aria-label="Next Review"
-          >
-            →
-          </button>
+          <script src="https://elfsightcdn.com/platform.js" async></script>
+          <div
+            class="elfsight-app-724dca83-e318-4707-8c5d-547c78f3a372"
+            data-elfsight-app-lazy
+          ></div>
         </div>
       </section>
 
