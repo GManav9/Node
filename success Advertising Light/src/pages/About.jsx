@@ -5,6 +5,7 @@ import "./Home.css";
 import "./About.css"; // ✅ required!
 import aboutImg from "../assets/aboutImg.jpg";
 import heroImg from "../assets/AboutUs.jpg";
+import customerImg from "../assets/HappyCustomer.jpeg";
 import { FaBullseye, FaLightbulb, FaHandshake } from "react-icons/fa"; // at the top of About.jsx
 
 function About() {
@@ -147,7 +148,7 @@ function About() {
           <div className="timeline">
             <div className="timeline-item left">
               <div className="timeline-content">
-                <h5 className="fw-bold text-danger">2015 – The Beginning</h5>
+                <h5 className="fw-bold text-danger">2016 – The Beginning</h5>
                 <p>
                   Success Enterprises was founded with a bold vision to redefine
                   how brands connect with audiences.
@@ -176,7 +177,7 @@ function About() {
             </div>
             <div className="timeline-item right">
               <div className="timeline-content">
-                <h5 className="fw-bold text-danger">2024 – Global Reach</h5>
+                <h5 className="fw-bold text-danger">2025 – Global Reach</h5>
                 <p>
                   Expanded our services internationally, building a global
                   network of brand partners.
@@ -185,6 +186,15 @@ function About() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="customer-section">
+        <img
+          src={customerImg}
+          alt="Happy Customers"
+          className="customer-img"
+          loading="eager"
+        />
       </section>
 
       <Footer />

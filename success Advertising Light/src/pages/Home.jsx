@@ -155,7 +155,7 @@ function Home() {
       <Navbar />
       <div className="social-sticky">
         <a
-          href="https://instagram.com/sample_username"
+          href="https://www.instagram.com/success_ad_rajkot?igsh=MXFnbHh2cmdjeHUxaA=="
           target="_blank"
           className="instagram"
         >
@@ -171,7 +171,7 @@ function Home() {
         </a>
 
         <a
-          href="https://facebook.com/sample_page"
+          href="https://www.facebook.com/share/1AW25Gucwq/"
           target="_blank"
           className="facebook"
         >
@@ -370,19 +370,22 @@ function Home() {
         </div>
       </section>
 
-      <section className="client-review-section py-5">
+      <section
+        id="client-review-section"
+        className="client-review-section py-5"
+      >
         <div className="container text-center position-relative">
           <h2 className="mb-5 fw-bold text-primary">What Our Clients Say</h2>
 
           <script src="https://elfsightcdn.com/platform.js" async></script>
           <div
-            class="elfsight-app-724dca83-e318-4707-8c5d-547c78f3a372"
+            className="elfsight-app-724dca83-e318-4707-8c5d-547c78f3a372"
             data-elfsight-app-lazy
           ></div>
         </div>
       </section>
 
-      <section className="choose-us-section py-5">
+      <section id="choose-us-section" className="choose-us-section py-5">
         <div className="container">
           <h2 className="text-center mb-5 fw-bold">
             Why You Should Choose Us For Your Business

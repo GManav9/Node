@@ -98,8 +98,8 @@ function Contact() {
                   <FaClock className="me-3 text-primary mt-1" size={22} />
                   <div>
                     <h6 className="fw-bold mb-1">Office Hours</h6>
-                    <p className="mb-1">Monday – Friday: 9:00 AM – 6:00 PM</p>
-                    <p className="mb-0">Saturday – Sunday: Closed</p>
+                    <p className="mb-1">Monday – Saturday: 9:00 AM – 8:00 PM</p>
+                    <p className="mb-0">Sunday – Closed</p>
                   </div>
                 </div>
               </div>
@@ -161,9 +161,18 @@ function Contact() {
       {/* Google Map Section */}
       <section className="map-section">
         <div className="container-fluid px-0">
-          <iframe
+          {/* <iframe
             title="Success AD Map"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.5768229221974!2d70.78371387491142!3d23.038109216010224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959ca3ab3c68271%3A0xa33c56bfc548ba6b!2sThe%20One%20World!5e0!3m2!1sen!2sin!4v1718519839995!5m2!1sen!2sin"
+            width="100%"
+            height="500"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe> */}
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.5800245189776!2d70.764213811934!3d22.331717641669016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959c9b096b88e69%3A0xb02a86ba6e1fb338!2sSUCCESS%20AD.!5e0!3m2!1sen!2sin!4v1773332253852!5m2!1sen!2sin"
             width="100%"
             height="500"
             style={{ border: 0 }}

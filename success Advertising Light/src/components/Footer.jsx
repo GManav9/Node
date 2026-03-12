@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import {
   FaFacebookF,
   FaInstagram,
@@ -36,16 +38,20 @@ const Footer = () => {
             <h5 className="footer-heading">Quick Links</h5>
             <ul className="footer-links">
               <li>
-                <a href="#services">Services</a>
+                <Link to="/services">Services</Link>
               </li>
               <li>
-                <a href="#choose">Why Choose Us</a>
+                <HashLink smooth to="/#choose-us-section">
+                  Why Choose Us
+                </HashLink>
               </li>
               <li>
-                <a href="#reviews">Testimonials</a>
+                <HashLink smooth to="/#client-review-section">
+                  Testimonials
+                </HashLink>
               </li>
               <li>
-                <a href="#contact">Contact</a>
+                <a href="/contact">Contact</a>
               </li>
             </ul>
           </div>
