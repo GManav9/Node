@@ -80,18 +80,19 @@ const Footer = () => {
             <h5 className="footer-heading">Follow Us</h5>
             <ul className="footer-links footer-social-list">
               <li>
-                <a href="#">
+                <a
+                  href="https://www.instagram.com/success_ad_rajkot?igsh=MXFnbHh2cmdjeHUxaA=="
+                  target="_blank"
+                >
                   <FaInstagram className="me-2" /> Instagram
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a
+                  href="https://www.facebook.com/share/1AW25Gucwq/"
+                  target="_blank"
+                >
                   <FaFacebookF className="me-2" /> Facebook
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <FaLinkedinIn className="me-2" /> LinkedIn
                 </a>
               </li>
             </ul>
@@ -106,14 +107,17 @@ const Footer = () => {
             rights reserved.
           </p>
           <div className="footer-socials">
-            <a href="#">
+            <a
+              href="https://www.facebook.com/share/1AW25Gucwq/"
+              target="_blank"
+            >
               <FaFacebookF />
             </a>
-            <a href="#">
+            <a
+              href="https://www.instagram.com/success_ad_rajkot?igsh=MXFnbHh2cmdjeHUxaA=="
+              target="_blank"
+            >
               <FaInstagram />
-            </a>
-            <a href="#">
-              <FaLinkedinIn />
             </a>
           </div>
         </div>
