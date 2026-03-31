@@ -10,27 +10,39 @@ import {
   FaClock,
 } from "react-icons/fa";
 
-import contactBg from "../assets/contactBg.jpg";
+// import contactBg from "../assets/contactBg.jpg";
 
-function Contact() {
+import desktopBg from "../assets/contact-desktop.jpg";
+import mobileBg from "../assets/contact_small_mobile1.jpg";
+
+const Contact = () => {
+  const [backgroundImage, setBackgroundImage] = useState(desktopBg);
+
   useEffect(() => {
-    window.scrollTo(0, 0);
+    const updateBackground = () => {
+      const isMobile = window.innerWidth <= 768;
+      setBackgroundImage(isMobile ? mobileBg : desktopBg);
+    };
+
+    updateBackground();
+    window.addEventListener("resize", updateBackground);
+
+    return () => window.removeEventListener("resize", updateBackground);
   }, []);
+
+  // function Contact() {
+  //   useEffect(() => {
+  //     window.scrollTo(0, 0);
+  //   }, []);
 
   return (
     <>
       <Navbar />
 
       {/* Banner Section */}
-      <section
-        className="d-flex align-items-center justify-content-center text-white"
-        style={{
-          backgroundImage: `url(${contactBg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          height: "55vh",
-        }}
-      ></section>
+      <section className="contact-hero">
+        <img src={backgroundImage} alt="contact" className="hero-img" />
+      </section>
 
       {/* Contact Info + Form */}
       <section
@@ -186,6 +198,6 @@ function Contact() {
       <Footer />
     </>
   );
-}
+};
 
 export default Contact;
